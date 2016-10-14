@@ -47,19 +47,11 @@ class UsuariosController extends AppController
 				$this->Session->setFlash('Error al guardar el registro. Por favor intenta nuevamente.', null, array(), 'danger');
 			}
 		}
-		$jornadaEstudios	= $this->Usuario->JornadaEstudio->find('list');
-		$sedes	= $this->Usuario->Sede->find('list');
-		$estudios	= $this->Usuario->Estudio->find('list');
-		$estudioUsuarios	= $this->Usuario->EstudioUsuario->find('list');
-		$experiencias	= $this->Usuario->Experiencia->find('list');
-		$jornadas	= $this->Usuario->Jornada->find('list');
-		$cargos	= $this->Usuario->Cargo->find('list');
-		$tipoContratos	= $this->Usuario->TipoContrato->find('list');
-		$situacionLaborales	= $this->Usuario->SituacionLaboral->find('list');
 		$comunas	= $this->Usuario->Comuna->find('list');
 		$preguntas	= $this->Usuario->Pregunta->find('list');
+		$situacionLaborales	= $this->Usuario->SituacionLaboral->find('list');
 		$categorias	= $this->Usuario->Categoria->find('list');
-		$this->set(compact('jornadaEstudios', 'sedes', 'estudios', 'estudioUsuarios', 'experiencias', 'jornadas', 'cargos', 'tipoContratos', 'situacionLaborales', 'comunas', 'preguntas', 'categorias'));
+		$this->set(compact('comunas', 'preguntas', 'situacionLaborales', 'categorias'));
 	}
 
 	public function admin_edit($id = null)
@@ -88,19 +80,11 @@ class UsuariosController extends AppController
 				'conditions'	=> array('Usuario.id' => $id)
 			));
 		}
-		$jornadaEstudios	= $this->Usuario->JornadaEstudio->find('list');
-		$sedes	= $this->Usuario->Sede->find('list');
-		$estudios	= $this->Usuario->Estudio->find('list');
-		$estudioUsuarios	= $this->Usuario->EstudioUsuario->find('list');
-		$experiencias	= $this->Usuario->Experiencia->find('list');
-		$jornadas	= $this->Usuario->Jornada->find('list');
-		$cargos	= $this->Usuario->Cargo->find('list');
-		$tipoContratos	= $this->Usuario->TipoContrato->find('list');
-		$situacionLaborales	= $this->Usuario->SituacionLaboral->find('list');
 		$comunas	= $this->Usuario->Comuna->find('list');
 		$preguntas	= $this->Usuario->Pregunta->find('list');
+		$situacionLaborales	= $this->Usuario->SituacionLaboral->find('list');
 		$categorias	= $this->Usuario->Categoria->find('list');
-		$this->set(compact('jornadaEstudios', 'sedes', 'estudios', 'estudioUsuarios', 'experiencias', 'jornadas', 'cargos', 'tipoContratos', 'situacionLaborales', 'comunas', 'preguntas', 'categorias'));
+		$this->set(compact('comunas', 'preguntas', 'situacionLaborales', 'categorias'));
 	}
 
 	public function admin_delete($id = null)

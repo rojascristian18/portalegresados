@@ -28,7 +28,7 @@
 						<tr>
 							<td><?= h($jornadaEstudio['JornadaEstudio']['nombre']); ?>&nbsp;</td>
 							<td><?= h($jornadaEstudio['JornadaEstudio']['descripcion']); ?>&nbsp;</td>
-							<td><?= h($jornadaEstudio['JornadaEstudio']['activo']); ?>&nbsp;</td>
+							<td><?= ($jornadaEstudio['JornadaEstudio']['activo'] ? '<i class="fa fa-check"></i>' : '<i class="fa fa-remove"></i>'); ?>&nbsp;</td>
 							<td><?= h($jornadaEstudio['JornadaEstudio']['created']); ?>&nbsp;</td>
 							<td>
 								<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $jornadaEstudio['JornadaEstudio']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>

@@ -47,34 +47,36 @@ jQuery(document).ready(function($)
 	/**
 	 * Ordenamiento de tablas generico
 	 */
-	$('.js-generico-contenedor-sort').sortable(
-	{
-		axis			: 'y',
-		cursor			: 'move',
-		helper			: function(e, tr)
+	if ( $('.js-generico-contenedor-sort').length ) {
+		$('.js-generico-contenedor-sort').sortable(
 		{
-			var $originals	= tr.children(),
-				$helper		= tr.clone();
-
-			$helper.children().each(function(index)
+			axis			: 'y',
+			cursor			: 'move',
+			helper			: function(e, tr)
 			{
-				$(this).width($originals.eq(index).width());
-			});
-			return $helper;
-		},
-		stop			: function(e, ui)
-		{
-			$('td.js-generico-orden', ui.item.parent()).each(function(i)
-			{
-				var $this		= $(this);
-				$this.find('input').val(i + 1);
-				$this.find('span').text(i + 1);
-			});
+				var $originals	= tr.children(),
+					$helper		= tr.clone();
 
-			var $form		= ui.item.parents('form').first();
-			$.post($form.attr('action'), $form.serialize());
-		}
-	}).disableSelection();
+				$helper.children().each(function(index)
+				{
+					$(this).width($originals.eq(index).width());
+				});
+				return $helper;
+			},
+			stop			: function(e, ui)
+			{
+				$('td.js-generico-orden', ui.item.parent()).each(function(i)
+				{
+					var $this		= $(this);
+					$this.find('input').val(i + 1);
+					$this.find('span').text(i + 1);
+				});
+
+				var $form		= ui.item.parents('form').first();
+				$.post($form.attr('action'), $form.serialize());
+			}
+		}).disableSelection();
+	}
 
 	$('.js-generico-handle-sort').on('click', function(evento)
 	{
@@ -99,15 +101,33 @@ jQuery(document).ready(function($)
 		});
 	}
 
+
 	/**
-	 * Funcion que permite obtener en formato YYYY-MM-DD una fecha determinada
-	 * @param			{Object}			fecha			Fecha que se desea obtener
-	 * @returns			{Object}			fecha			Fecha en formato YYYY-MM-DD
+	 * Select estados
 	 */
-	function obtenerFecha(fecha)
+	if($(".select").length > 0){
+        $(".select").selectpicker();
+
+        $(".select").on("change", function(){
+            if($(this).val() == "" || null === $(this).val()){
+                if(!$(this).attr("multiple"))
+                    $(this).val("").find("option").removeAttr("selected").prop("selected",false);
+            }else{
+                $(this).find("option[value="+$(this).val()+"]").attr("selected",true);
+            }
+        });
+    }
+
+	if ( $('input.icheckbox').length )
 	{
-		return fecha.getFullYear() + '-' + (fecha.getMonth() + 1) + '-' + fecha.getDate();
+		$('input.icheckbox').iCheck(
+		{
+			checkboxClass	: 'icheckbox_flat-red',
+			radioClass		: 'iradio_flat-red',
+			increaseArea	: '20%'
+		});
 	}
+
 
 	/**
 	 * Idioma español datepicker
@@ -123,9 +143,40 @@ jQuery(document).ready(function($)
 			today			: 'Hoy',
 			clear			: 'Borrar',
 			weekStart		: 1,
-			format			: 'dd/mm/yyyy'
+			format			: 'yyyy-mm-dd'
 		}
 	}(jQuery);
+
+
+	/*
+	* Widgets
+	*/
+	if($(".owl-carousel").length > 0){
+        $(".owl-carousel").owlCarousel({mouseDrag: false, touchDrag: true, slideSpeed: 300, paginationSpeed: 400, singleItem: true, navigation: false,autoPlay: true});
+    }
+
+    if($(".datepicker").length > 0){
+        $(".datepicker").datepicker({
+        	language	: 'es',
+        	formato 	: 'yyyy-mm-dd'
+        });
+    }
+
+    if($(".timepicker24").length > 0) {
+        $(".timepicker24").timepicker({minuteStep: 5,showSeconds: true,showMeridian: false});
+    }
+	
+	
+
+	/**
+	 * Funcion que permite obtener en formato YYYY-MM-DD una fecha determinada
+	 * @param			{Object}			fecha			Fecha que se desea obtener
+	 * @returns			{Object}			fecha			Fecha en formato YYYY-MM-DD
+	 */
+	function obtenerFecha(fecha)
+	{
+		return fecha.getFullYear() + '-' + (fecha.getMonth() + 1) + '-' + fecha.getDate();
+	}
 
 	/**
 	 * Buscador de OC - Datepicker rango fechas

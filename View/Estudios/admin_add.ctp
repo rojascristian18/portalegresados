@@ -35,8 +35,8 @@
 						<td><?= $this->Form->input('duracion'); ?></td>
 					</tr>
 					<tr>
-						<th><?= $this->Form->label('duracion_horas', 'Duracion horas'); ?></th>
-						<td><?= $this->Form->input('duracion_horas'); ?></td>
+						<th><?= $this->Form->label('duracion_hora', 'Duracion hora'); ?></th>
+						<td><?= $this->Form->input('duracion_hora'); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('fecha_inicio', 'Fecha inicio'); ?></th>
@@ -80,7 +80,7 @@
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('activo', 'Activo'); ?></th>
-						<td><?= $this->Form->input('activo'); ?></td>
+						<td><?= $this->Form->input('activo', array('class' => 'icheckbox')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('Sed', 'Sed'); ?></th>

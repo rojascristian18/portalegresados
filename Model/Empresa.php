@@ -14,7 +14,6 @@ class Empresa extends AppModel
 		/**
 		 * IMAGE UPLOAD
 		 */
-		/*
 		'Image'		=> array(
 			'fields'	=> array(
 				'imagen'	=> array(
@@ -29,12 +28,133 @@ class Empresa extends AppModel
 				)
 			)
 		)
-		*/
 	);
 
 	/**
 	 * VALIDACIONES
 	 */
+	public $validate = array(
+		'rut' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'clave' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'fono' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'respuesta' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'email' => array(
+			'email' => array(
+				'rule'			=> array('email'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'nombre' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'nombre_comercial' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'descripcion' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'nombre_responsable' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'apellido_responsable' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'cargo_responsable' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'activo' => array(
+			'numeric' => array(
+				'rule'			=> array('numeric'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+	);
 
 	/**
 	 * ASOCIACIONES
@@ -58,9 +178,9 @@ class Empresa extends AppModel
 			'counterCache'			=> true,
 			//'counterScope'			=> array('Asociado.modelo' => 'Comuna')
 		),
-		'Empleados' => array(
-			'className'				=> 'Empleados',
-			'foreignKey'			=> 'empleados_id',
+		'Empleado' => array(
+			'className'				=> 'Empleado',
+			'foreignKey'			=> 'empleado_id',
 			'conditions'			=> '',
 			'fields'				=> '',
 			'order'					=> '',
@@ -92,4 +212,24 @@ class Empresa extends AppModel
 			'counterQuery'			=> ''
 		)
 	);
+
+
+	/**
+	 * CALLBACKS
+	 */
+	public function beforeSave($options = array())
+	{
+		if ( isset($this->data[$this->alias]['clave']) )
+		{
+			if ( trim($this->data[$this->alias]['clave']) == false )
+			{
+				unset($this->data[$this->alias]['clave'], $this->data[$this->alias]['repetir_clave']);
+			}
+			else
+			{
+				$this->data[$this->alias]['clave']	= AuthComponent::password($this->data[$this->alias]['clave']);
+			}
+		}
+		return true;
+	}
 }

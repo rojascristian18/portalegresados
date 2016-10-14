@@ -11,8 +11,8 @@
 			<?= $this->Form->create('Empleado', array('class' => 'form-horizontal', 'type' => 'file', 'inputDefaults' => array('label' => false, 'div' => false, 'class' => 'form-control'))); ?>
 				<table class="table">
 					<tr>
-						<th><?= $this->Form->label('cantidad', 'Cantidad'); ?></th>
-						<td><?= $this->Form->input('cantidad'); ?></td>
+						<th><?= $this->Form->label('cantidad_empleado', 'Cantidad empleado'); ?></th>
+						<td><?= $this->Form->input('cantidad_empleado'); ?></td>
 					</tr>
 				</table>
 

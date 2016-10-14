@@ -136,3 +136,9 @@ function prx()
 		pr($arg);
 	exit;
 }
+
+
+/**
+ * Listeners
+ */
+require_once APP . 'Config' . DS . 'events.php';

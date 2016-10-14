@@ -1,0 +1,863 @@
+2016-10-13 11:25:11 Error: [MissingControllerException] Controller class PagesController could not be found.
+Exception Attributes: array (
+  'class' => 'PagesController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 11:25:45 Error: [MissingControllerException] Controller class PagesController could not be found.
+Exception Attributes: array (
+  'class' => 'PagesController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 12:07:46 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/admin/administradores/edit/1
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 12:08:12 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/admin/administradores/edit/1
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 12:08:19 Error: [MissingActionException] Action AdministradoresController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AdministradoresController',
+  'action' => 'index',
+)
+Request URL: /cake/manpower/exalumnos/admin/
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AdministradoresController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-13 12:20:08 Error: [MissingControllerException] Controller class JobController could not be found.
+Exception Attributes: array (
+  'class' => 'JobController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/job/login
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 12:20:14 Error: [MissingControllerException] Controller class JobController could not be found.
+Exception Attributes: array (
+  'class' => 'JobController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/job
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 12:27:09 Error: [MissingActionException] Action EmpresasController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpresasController',
+  'action' => 'index',
+)
+Request URL: /cake/manpower/exalumnos/job
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-13 12:29:02 Error: [MissingActionException] Action EmpresasController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpresasController',
+  'action' => 'index',
+)
+Request URL: /cake/manpower/exalumnos/job
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-13 12:30:39 Error: [MissingActionException] Action EmpresasController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpresasController',
+  'action' => 'index',
+)
+Request URL: /cake/manpower/exalumnos/job
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-13 12:30:46 Error: [MissingControllerException] Controller class UsersController could not be found.
+Exception Attributes: array (
+  'class' => 'UsersController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/users/login
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 12:31:06 Error: [MissingActionException] Action EmpresasController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpresasController',
+  'action' => 'index',
+)
+Request URL: /cake/manpower/exalumnos/job
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-13 12:31:34 Error: [MissingActionException] Action EmpresasController::job_login() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpresasController',
+  'action' => 'job_login',
+)
+Request URL: /cake/manpower/exalumnos/job/login
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-13 12:32:23 Error: [MissingViewException] View file "Empresas\job_login.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Empresas\\job_login.ctp',
+)
+Request URL: /cake/manpower/exalumnos/job/login
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(960): View->render(NULL, NULL)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#4 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-10-13 12:39:31 Error: [MissingActionException] Action EmpresasController::job_registro() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpresasController',
+  'action' => 'job_registro',
+)
+Request URL: /cake/manpower/exalumnos/job/empresas/registro
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-13 12:39:57 Error: [MissingControllerException] Controller class UsersController could not be found.
+Exception Attributes: array (
+  'class' => 'UsersController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/users/login
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 12:40:28 Error: [MissingControllerException] Controller class UsersController could not be found.
+Exception Attributes: array (
+  'class' => 'UsersController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/users/login
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 12:57:02 Error: [MissingActionException] Action EmpresasController::job_registro() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpresasController',
+  'action' => 'job_registro',
+)
+Request URL: /cake/manpower/exalumnos/job/registro
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-13 12:57:58 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\wamp\www\cake\manpower\exalumnos\Controller\EmpresasController.php, line 177]
+2016-10-13 12:57:58 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /cake/manpower/exalumnos/empresas/registro
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\cak...', 177)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\cak...', 177, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\cak...', 177, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-13 13:04:23 Error: [MissingViewException] View file "Empresas\registro.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Empresas\\registro.ctp',
+)
+Request URL: /cake/manpower/exalumnos/empresas/registro
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(960): View->render(NULL, NULL)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#4 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-10-13 13:05:17 Error: [MissingLayoutException] Layout file "Layouts\registro_empresa.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Layouts\\registro_empresa.ctp',
+)
+Request URL: /cake/manpower/exalumnos/empresas/registro
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\View\View.php(514): View->_getLayoutFileName('registro_empres...')
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\View\View.php(481): View->renderLayout('', 'registro_empres...')
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(960): View->render(NULL, NULL)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#4 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#5 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2016-10-13 13:23:48 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/favicon.ico
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 13:37:17 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RubroEmpresa.nombre' in 'field list'
+Request URL: /cake/manpower/exalumnos/empresas/registro
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(461): PDOStatement->execute(Array)
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(427): DboSource->_execute('SELECT `RubroEm...', Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(669): DboSource->execute('SELECT `RubroEm...', Array, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(1118): DboSource->fetchAll('SELECT `RubroEm...', false)
+#4 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(3031): DboSource->read(Object(RubroEmpresa), Array)
+#5 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(3003): Model->_readDataSource('list', Array)
+#6 C:\wamp\www\cake\manpower\exalumnos\Controller\EmpresasController.php(175): Model->find('list')
+#7 [internal function]: EmpresasController->registro()
+#8 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(EmpresasController), Array)
+#9 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#11 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2016-10-13 13:40:51 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
+Request URL: /cake/manpower/exalumnos/empresas/registro
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(461): PDOStatement->execute(Array)
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(427): DboSource->_execute('INSERT INTO `ma...', Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(1024): DboSource->execute('INSERT INTO `ma...')
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1933): DboSource->create(Object(Empresa), Array, Array)
+#4 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1751): Model->_doSave(Array, Array)
+#5 C:\wamp\www\cake\manpower\exalumnos\Controller\EmpresasController.php(164): Model->save(Array)
+#6 [internal function]: EmpresasController->registro()
+#7 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(EmpresasController), Array)
+#8 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#10 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2016-10-13 13:42:20 Error: [MissingActionException] Action EmpresasController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpresasController',
+  'action' => 'index',
+)
+Request URL: /cake/manpower/exalumnos/empresas
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-13 13:43:06 Error: [MissingActionException] Action EmpresasController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpresasController',
+  'action' => 'index',
+)
+Request URL: /cake/manpower/exalumnos/empresas
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-13 15:02:47 Error: [MissingActionException] Action EmpresasController::job() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpresasController',
+  'action' => 'job',
+)
+Request URL: /cake/manpower/exalumnos/empresas/job
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-13 15:54:16 Error: Fatal Error (1): Class 'LeadListener' not found in [C:\wamp\www\cake\manpower\exalumnos\Config\events.php, line 5]
+2016-10-13 15:54:16 Error: [FatalErrorException] Class 'LeadListener' not found
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-13 17:03:30 Error: Fatal Error (1): Class 'LeadListener' not found in [C:\wamp\www\cake\manpower\exalumnos\Config\events.php, line 5]
+2016-10-13 17:03:30 Error: [FatalErrorException] Class 'LeadListener' not found
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-13 17:03:30 Error: Fatal Error (1): Class 'LeadListener' not found in [C:\wamp\www\cake\manpower\exalumnos\Config\events.php, line 5]
+2016-10-13 17:03:30 Error: [FatalErrorException] Class 'LeadListener' not found
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-13 17:03:30 Error: Fatal Error (1): Class 'LeadListener' not found in [C:\wamp\www\cake\manpower\exalumnos\Config\events.php, line 5]
+2016-10-13 17:03:31 Error: [FatalErrorException] Class 'LeadListener' not found
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-13 17:03:31 Error: Fatal Error (1): Class 'LeadListener' not found in [C:\wamp\www\cake\manpower\exalumnos\Config\events.php, line 5]
+2016-10-13 17:03:31 Error: [FatalErrorException] Class 'LeadListener' not found
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-13 17:03:56 Error: Fatal Error (1): Class 'LeadListener' not found in [C:\wamp\www\cake\manpower\exalumnos\Config\events.php, line 5]
+2016-10-13 17:03:56 Error: [FatalErrorException] Class 'LeadListener' not found
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-13 17:03:56 Error: Fatal Error (1): Class 'LeadListener' not found in [C:\wamp\www\cake\manpower\exalumnos\Config\events.php, line 5]
+2016-10-13 17:03:56 Error: Fatal Error (1): Class 'LeadListener' not found in [C:\wamp\www\cake\manpower\exalumnos\Config\events.php, line 5]
+2016-10-13 17:03:56 Error: [FatalErrorException] Class 'LeadListener' not found
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-13 17:03:56 Error: [FatalErrorException] Class 'LeadListener' not found
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-13 17:03:57 Error: Fatal Error (1): Class 'LeadListener' not found in [C:\wamp\www\cake\manpower\exalumnos\Config\events.php, line 5]
+2016-10-13 17:03:57 Error: [FatalErrorException] Class 'LeadListener' not found
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'LeadList...', 'C:\\wamp\\www\\cak...', 5, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-13 17:04:22 Error: [MissingTableException] Table mp_jornadas for model Jornada was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'mp_jornadas',
+  'class' => 'Jornada',
+  'ds' => 'default',
+)
+Request URL: /cake/manpower/exalumnos/admin/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(3653): Model->setSource('jornadas')
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1387): Model->getDataSource()
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1483): Model->schema()
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(2157): Model->hasField('empleo_count')
+#4 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1941): Model->updateCounterCache(Array, true)
+#5 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1751): Model->_doSave(Array, Array)
+#6 C:\wamp\www\cake\manpower\exalumnos\Controller\EmpleosController.php(19): Model->save(Array)
+#7 [internal function]: EmpleosController->admin_add()
+#8 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(EmpleosController), Array)
+#9 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#11 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2016-10-13 17:05:41 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Empleo.jornada_laboral_id' in 'field list'
+Request URL: /cake/manpower/exalumnos/admin/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(461): PDOStatement->execute(Array)
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(427): DboSource->_execute('SELECT `Empleo`...', Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(669): DboSource->execute('SELECT `Empleo`...', Array, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(1118): DboSource->fetchAll('SELECT `Empleo`...', false)
+#4 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(3031): DboSource->read(Object(Empleo), Array)
+#5 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(3003): Model->_readDataSource('first', Array)
+#6 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1659): Model->find('first', Array)
+#7 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(2168): Model->field('jornada_laboral...')
+#8 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1941): Model->updateCounterCache(Array, true)
+#9 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1751): Model->_doSave(Array, Array)
+#10 C:\wamp\www\cake\manpower\exalumnos\Controller\EmpleosController.php(19): Model->save(Array)
+#11 [internal function]: EmpleosController->admin_add()
+#12 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(EmpleosController), Array)
+#13 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#14 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#15 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2016-10-13 17:06:34 Error: [MissingTableException] Table mp_tipo_contratos for model TipoContrato was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'mp_tipo_contratos',
+  'class' => 'TipoContrato',
+  'ds' => 'default',
+)
+Request URL: /cake/manpower/exalumnos/admin/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(3653): Model->setSource('tipo_contratos')
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1387): Model->getDataSource()
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1483): Model->schema()
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(2157): Model->hasField('empleo_count')
+#4 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1941): Model->updateCounterCache(Array, true)
+#5 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1751): Model->_doSave(Array, Array)
+#6 C:\wamp\www\cake\manpower\exalumnos\Controller\EmpleosController.php(19): Model->save(Array)
+#7 [internal function]: EmpleosController->admin_add()
+#8 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(EmpleosController), Array)
+#9 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#11 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2016-10-13 17:08:24 Error: [MissingTableException] Table mp_experiencias for model Experiencia was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'mp_experiencias',
+  'class' => 'Experiencia',
+  'ds' => 'default',
+)
+Request URL: /cake/manpower/exalumnos/admin/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(3653): Model->setSource('experiencias')
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1387): Model->getDataSource()
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1483): Model->schema()
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(2157): Model->hasField('empleo_count')
+#4 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1941): Model->updateCounterCache(Array, true)
+#5 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1751): Model->_doSave(Array, Array)
+#6 C:\wamp\www\cake\manpower\exalumnos\Controller\EmpleosController.php(19): Model->save(Array)
+#7 [internal function]: EmpleosController->admin_add()
+#8 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(EmpleosController), Array)
+#9 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#11 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2016-10-13 17:19:23 Error: Fatal Error (1): Class 'CassRegistry' not found in [C:\wamp\www\cake\manpower\exalumnos\Model\Empleo.php, line 235]
+2016-10-13 17:19:23 Error: [FatalErrorException] Class 'CassRegistry' not found
+Request URL: /cake/manpower/exalumnos/admin/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'CassRegi...', 'C:\\wamp\\www\\cak...', 235)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'CassRegi...', 'C:\\wamp\\www\\cak...', 235, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'CassRegi...', 'C:\\wamp\\www\\cak...', 235, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 09:42:09 Error: [MissingActionException] Action AdministradoresController::job_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AdministradoresController',
+  'action' => 'job_index',
+)
+Request URL: /cake/manpower/exalumnos/job/administradores
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AdministradoresController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-14 09:47:38 Error: [MissingActionException] Action EmpleosController::job_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpleosController',
+  'action' => 'job_index',
+)
+Request URL: /cake/manpower/exalumnos/job/empleos
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-14 09:50:31 Error: [MissingViewException] View file "Empleos\job_index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Empleos\\job_index.ctp',
+)
+Request URL: /cake/manpower/exalumnos/job/empleos
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(960): View->render(NULL, NULL)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#4 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-10-14 09:50:44 Error: [MissingActionException] Action AdministradoresController::job_add() could not be found.
+Exception Attributes: array (
+  'controller' => 'AdministradoresController',
+  'action' => 'job_add',
+)
+Request URL: /cake/manpower/exalumnos/job/administradores/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AdministradoresController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-14 09:50:53 Error: [MissingViewException] View file "Empleos\job_index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Empleos\\job_index.ctp',
+)
+Request URL: /cake/manpower/exalumnos/job/empleos
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(960): View->render(NULL, NULL)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#4 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-10-14 10:07:39 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\wamp\www\cake\manpower\exalumnos\Controller\EmpleosController.php, line 131]
+2016-10-14 10:07:39 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /cake/manpower/exalumnos/job/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 131)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 131, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 131, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 10:07:51 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\wamp\www\cake\manpower\exalumnos\Controller\EmpleosController.php, line 131]
+2016-10-14 10:07:51 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /cake/manpower/exalumnos/job/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\cak...', 131)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wamp\\www\\cak...', 131, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wamp\\www\\cak...', 131, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 10:17:36 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\wamp\www\cake\manpower\exalumnos\Controller\EmpleosController.php, line 128]
+2016-10-14 10:17:36 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /cake/manpower/exalumnos/job/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 128)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 128, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 128, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 10:24:37 Error: [MissingActionException] Action EmpleosController::job_logo-manpower.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpleosController',
+  'action' => 'job_logo-manpower.png',
+)
+Request URL: /cake/manpower/exalumnos/job/empleos/logo-manpower.png
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-14 10:25:06 Error: [MissingActionException] Action EmpleosController::job_logo-manpower.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpleosController',
+  'action' => 'job_logo-manpower.png',
+)
+Request URL: /cake/manpower/exalumnos/job/empleos/logo-manpower.png
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-14 10:27:18 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/img/backend/templete/logo-manpower-email.png
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 10:27:51 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/img/template/logo-manpower-email.png
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 11:02:17 Error: [MissingActionException] Action EmpleosController::admin_view() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpleosController',
+  'action' => 'admin_view',
+)
+Request URL: /cake/manpower/exalumnos/admin/empleos/view/51
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-14 11:12:16 Error: [MissingViewException] View file "Emails\html\aleta_empleo_empresa.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Emails\\html\\aleta_empleo_empresa.ctp',
+)
+Request URL: /cake/manpower/exalumnos/job/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\View\View.php(470): View->_getViewFileName('aleta_empleo_em...')
+#1 C:\wamp\www\cake\manpower\exalumnos\Lib\Event\EmpleoListener.php(82): View->render('aleta_empleo_em...')
+#2 [internal function]: EmpleoListener->enviarEmailAdministrador(Object(CakeEvent))
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php(243): call_user_func(Array, Object(CakeEvent))
+#4 C:\wamp\www\cake\manpower\exalumnos\Model\Empleo.php(248): CakeEventManager->dispatch(Object(CakeEvent))
+#5 [internal function]: Empleo->afterSave(true, Array)
+#6 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php(241): call_user_func_array(Array, Array)
+#7 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1961): CakeEventManager->dispatch(Object(CakeEvent))
+#8 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1751): Model->_doSave(Array, Array)
+#9 C:\wamp\www\cake\manpower\exalumnos\Controller\EmpleosController.php(117): Model->save(Array)
+#10 [internal function]: EmpleosController->job_add()
+#11 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(EmpleosController), Array)
+#12 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#14 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2016-10-14 11:15:13 Error: [MissingViewException] View file "Emails\html\aleta_empleo_empresa.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Emails\\html\\aleta_empleo_empresa.ctp',
+)
+Request URL: /cake/manpower/exalumnos/job/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\View\View.php(470): View->_getViewFileName('aleta_empleo_em...')
+#1 C:\wamp\www\cake\manpower\exalumnos\Lib\Event\EmpleoListener.php(84): View->render('aleta_empleo_em...')
+#2 [internal function]: EmpleoListener->enviarEmailAdministrador(Object(CakeEvent))
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php(243): call_user_func(Array, Object(CakeEvent))
+#4 C:\wamp\www\cake\manpower\exalumnos\Model\Empleo.php(248): CakeEventManager->dispatch(Object(CakeEvent))
+#5 [internal function]: Empleo->afterSave(true, Array)
+#6 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php(241): call_user_func_array(Array, Array)
+#7 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1961): CakeEventManager->dispatch(Object(CakeEvent))
+#8 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Model\Model.php(1751): Model->_doSave(Array, Array)
+#9 C:\wamp\www\cake\manpower\exalumnos\Controller\EmpleosController.php(117): Model->save(Array)
+#10 [internal function]: EmpleosController->job_add()
+#11 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(EmpleosController), Array)
+#12 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#14 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2016-10-14 12:34:40 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/css/bootstrap.min.css.map
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 15:04:27 Error: [MissingActionException] Action EmpleosController::admin_unpublish() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpleosController',
+  'action' => 'admin_unpublish',
+)
+Request URL: /cake/manpower/exalumnos/admin/empleos/unpublish/60
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleosController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-14 15:06:26 Error: [MissingActionException] Action EmpleadosController::job_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpleadosController',
+  'action' => 'job_index',
+)
+Request URL: /cake/manpower/exalumnos/job/empleados
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleadosController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-14 15:06:33 Error: [MissingActionException] Action EmpleadosController::job_add() could not be found.
+Exception Attributes: array (
+  'controller' => 'EmpleadosController',
+  'action' => 'job_add',
+)
+Request URL: /cake/manpower/exalumnos/job/empleados/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(EmpleadosController), Object(CakeRequest))
+#2 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-10-14 15:27:35 Error: Fatal Error (4): syntax error, unexpected ')' in [C:\wamp\www\cake\manpower\exalumnos\Model\Empleo.php, line 259]
+2016-10-14 15:27:35 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /cake/manpower/exalumnos/admin/empleos/publish/86
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 259)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 259, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 259, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 15:35:45 Error: Fatal Error (4): syntax error, unexpected '$evento' (T_VARIABLE) in [C:\wamp\www\cake\manpower\exalumnos\Lib\Event\EmpleoListener.php, line 10]
+2016-10-14 15:35:45 Error: [FatalErrorException] syntax error, unexpected '$evento' (T_VARIABLE)
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 15:35:46 Error: Fatal Error (4): syntax error, unexpected '$evento' (T_VARIABLE) in [C:\wamp\www\cake\manpower\exalumnos\Lib\Event\EmpleoListener.php, line 10]
+2016-10-14 15:35:46 Error: Fatal Error (4): syntax error, unexpected '$evento' (T_VARIABLE) in [C:\wamp\www\cake\manpower\exalumnos\Lib\Event\EmpleoListener.php, line 10]
+2016-10-14 15:35:46 Error: [FatalErrorException] syntax error, unexpected '$evento' (T_VARIABLE)
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 15:35:46 Error: [FatalErrorException] syntax error, unexpected '$evento' (T_VARIABLE)
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 15:35:47 Error: Fatal Error (4): syntax error, unexpected '$evento' (T_VARIABLE) in [C:\wamp\www\cake\manpower\exalumnos\Lib\Event\EmpleoListener.php, line 10]
+2016-10-14 15:35:47 Error: [FatalErrorException] syntax error, unexpected '$evento' (T_VARIABLE)
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 10, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 16:46:34 Error: Fatal Error (4): syntax error, unexpected ''/backend/js/plugins/icheck/ic' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\wamp\www\cake\manpower\exalumnos\View\Layouts\backend\default.ctp, line 29]
+2016-10-14 16:46:34 Error: [FatalErrorException] syntax error, unexpected ''/backend/js/plugins/icheck/ic' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /cake/manpower/exalumnos/job/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 29)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 29, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 29, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 16:46:48 Error: Fatal Error (4): syntax error, unexpected ''/backend/js/plugins/icheck/ic' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\wamp\www\cake\manpower\exalumnos\View\Layouts\backend\default.ctp, line 29]
+2016-10-14 16:46:48 Error: [FatalErrorException] syntax error, unexpected ''/backend/js/plugins/icheck/ic' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /cake/manpower/exalumnos/job/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 29)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 29, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 29, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 17:18:28 Error: Fatal Error (4): syntax error, unexpected ''/backend/js/plugins/bootstrap' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\wamp\www\cake\manpower\exalumnos\View\Layouts\backend\default.ctp, line 27]
+2016-10-14 17:18:28 Error: [FatalErrorException] syntax error, unexpected ''/backend/js/plugins/bootstrap' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /cake/manpower/exalumnos/job/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 27)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 27, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\cak...', 27, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 18:03:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/js/js/plugins/codemirror/codemirror.js
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 18:03:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/js/js/plugins/codemirror/codemirror.js
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 18:03:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/js/js/plugins/codemirror/codemirror.js
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 18:03:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/js/js/plugins/codemirror/codemirror.js
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 18:04:17 Error: Fatal Error (1): Class 'AnotherClassName' not found in [C:\wamp\www\cake\manpower\exalumnos\View\Empleos\job_add.ctp, line 21]
+2016-10-14 18:04:17 Error: [FatalErrorException] Class 'AnotherClassName' not found
+Request URL: /cake/manpower/exalumnos/job/empleos/add
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'AnotherC...', 'C:\\wamp\\www\\cak...', 21)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'AnotherC...', 'C:\\wamp\\www\\cak...', 21, Array)
+#2 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'AnotherC...', 'C:\\wamp\\www\\cak...', 21, Array)
+#3 C:\wamp\www\cake\manpower\exalumnos\Cake\2.7.7\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-14 18:04:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/js/js/plugins/codemirror/codemirror.js
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 18:04:21 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/js/js/plugins/codemirror/codemirror.js
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 18:05:40 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/js/js/plugins/codemirror/codemirror.js
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 18:05:41 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/js/js/plugins/codemirror/codemirror.js
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 18:05:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/js/js/plugins/codemirror/codemirror.js
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-14 18:05:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /cake/manpower/exalumnos/js/js/plugins/codemirror/codemirror.js
+Stack Trace:
+#0 C:\wamp\www\cake\manpower\exalumnos\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

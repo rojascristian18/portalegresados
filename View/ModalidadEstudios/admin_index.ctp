@@ -28,7 +28,7 @@
 						<tr>
 							<td><?= h($modalidadEstudio['ModalidadEstudio']['nombre']); ?>&nbsp;</td>
 							<td><?= h($modalidadEstudio['ModalidadEstudio']['descripcion']); ?>&nbsp;</td>
-							<td><?= h($modalidadEstudio['ModalidadEstudio']['activo']); ?>&nbsp;</td>
+							<td><?= ($modalidadEstudio['ModalidadEstudio']['activo'] ? '<i class="fa fa-check"></i>' : '<i class="fa fa-remove"></i>'); ?>&nbsp;</td>
 							<td><?= h($modalidadEstudio['ModalidadEstudio']['created']); ?>&nbsp;</td>
 							<td>
 								<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $modalidadEstudio['ModalidadEstudio']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>

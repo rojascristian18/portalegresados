@@ -34,6 +34,48 @@ class Modulo extends AppModel
 	/**
 	 * VALIDACIONES
 	 */
+	public $validate = array(
+		'modulo' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'descripcion' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'orden' => array(
+			'numeric' => array(
+				'rule'			=> array('numeric'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'activo' => array(
+			'numeric' => array(
+				'rule'			=> array('numeric'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+	);
 
 	/**
 	 * ASOCIACIONES

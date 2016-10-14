@@ -30,7 +30,7 @@
 							<td><?= $this->Html->link($categoria['ParentCategoria']['nombre'], array('controller' => 'categorias', 'action' => 'edit', $categoria['ParentCategoria']['id'])); ?></td>
 							<td><?= h($categoria['Categoria']['nombre']); ?>&nbsp;</td>
 							<td><?= h($categoria['Categoria']['nombre_corto']); ?>&nbsp;</td>
-							<td><?= h($categoria['Categoria']['activo']); ?>&nbsp;</td>
+							<td><?= ($categoria['Categoria']['activo'] ? '<i class="fa fa-check"></i>' : '<i class="fa fa-remove"></i>'); ?>&nbsp;</td>
 							<td><?= h($categoria['Categoria']['empleo_count']); ?>&nbsp;</td>
 							<td>
 								<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $categoria['Categoria']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>

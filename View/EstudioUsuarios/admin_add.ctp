@@ -11,20 +11,48 @@
 			<?= $this->Form->create('EstudioUsuario', array('class' => 'form-horizontal', 'type' => 'file', 'inputDefaults' => array('label' => false, 'div' => false, 'class' => 'form-control'))); ?>
 				<table class="table">
 					<tr>
-						<th><?= $this->Form->label('nombre', 'Nombre'); ?></th>
-						<td><?= $this->Form->input('nombre'); ?></td>
+						<th><?= $this->Form->label('sede_id', 'Sede'); ?></th>
+						<td><?= $this->Form->input('sede_id', array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
-						<th><?= $this->Form->label('activo', 'Activo'); ?></th>
-						<td><?= $this->Form->input('activo'); ?></td>
+						<th><?= $this->Form->label('carrera_id', 'Carrera'); ?></th>
+						<td><?= $this->Form->input('carrera_id', array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
-						<th><?= $this->Form->label('empleo_count', 'Empleo count'); ?></th>
-						<td><?= $this->Form->input('empleo_count', array('class' => 'form-control select')); ?></td>
+						<th><?= $this->Form->label('usuario_id', 'Usuario'); ?></th>
+						<td><?= $this->Form->input('usuario_id', array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
-						<th><?= $this->Form->label('empleo_activo_count', 'Empleo activo count'); ?></th>
-						<td><?= $this->Form->input('empleo_activo_count', array('class' => 'form-control select')); ?></td>
+						<th><?= $this->Form->label('jornada_estudio_id', 'Jornada estudio'); ?></th>
+						<td><?= $this->Form->input('jornada_estudio_id'); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('otra_insitucion', 'Otra insitucion'); ?></th>
+						<td><?= $this->Form->input('otra_insitucion'); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('casa_estudio', 'Casa estudio'); ?></th>
+						<td><?= $this->Form->input('casa_estudio'); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('carrera', 'Carrera'); ?></th>
+						<td><?= $this->Form->input('carrera'); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('carrera_completa', 'Carrera completa'); ?></th>
+						<td><?= $this->Form->input('carrera_completa', array('class' => 'icheckbox')); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('descripcion', 'Descripcion'); ?></th>
+						<td><?= $this->Form->input('descripcion'); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('fecha_inicio', 'Fecha inicio'); ?></th>
+						<td><?= $this->Form->input('fecha_inicio'); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('fecha_termino', 'Fecha termino'); ?></th>
+						<td><?= $this->Form->input('fecha_termino'); ?></td>
 					</tr>
 				</table>
 

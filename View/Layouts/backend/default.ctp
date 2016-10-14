@@ -7,7 +7,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<?= $this->Html->meta('icon'); ?>
 		<?= $this->Html->css(array(
-			'/backend/css/theme-default',
+			'/backend/css/theme-dark',
+			'/backend/css/icheck/skins/flat/red',
+			'/backend/css/job-style',
 			'/backend/css/custom',
 			/*
 			'/backend/css/ion/ion.rangeSlider',
@@ -24,6 +26,19 @@
 			//'/backend/js/plugins/jquery/jquery-ui.min',
 			'/backend/js/plugins/bootstrap/bootstrap.min',
 			'/backend/js/plugins/bootstrap/bootstrap-select',
+			'/backend/js/plugins/bootstrap/bootstrap-datepicker',
+			'/backend/js/plugins/bootstrap/bootstrap-timepicker.min',
+			'/backend/js/plugins/icheck/icheck.min',
+			'/backend/js/plugins/owl/owl.carousel.min',
+			'/backend/js/plugins/codemirror/codemirror',
+			'/backend/js/plugins/codemirror/mode/htmlmixed/htmlmixed',
+			'/backend/js/plugins/codemirror/mode/xml/xml',
+			'/backend/js/plugins/codemirror/mode/javascript/javascript',
+			'/backend/js/plugins/codemirror/mode/css/css',
+			'/backend/js/plugins/codemirror/mode/clike/clike',
+			'/backend/js/plugins/codemirror/mode/php/php',
+			'/backend/js/plugins/summernote/summernote',
+			'/backend/js/custom',
 			/*
 			'/backend/js/plugins/bootstrap/bootstrap-datepicker',
 

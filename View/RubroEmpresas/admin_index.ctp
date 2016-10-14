@@ -16,7 +16,7 @@
 				<table class="table">
 					<thead>
 						<tr class="sort">
-							<th><?= $this->Paginator->sort('nombre', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
+							<th><?= $this->Paginator->sort('rubro_empresa', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
 							<th><?= $this->Paginator->sort('activo', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
 							<th><?= $this->Paginator->sort('created', 'Fecha de creación', array('title' => 'Haz click para ordenar por este criterio')); ?></th>
 							<th>Acciones</th>
@@ -25,8 +25,8 @@
 					<tbody>
 						<?php foreach ( $rubroEmpresas as $rubroEmpresa ) : ?>
 						<tr>
-							<td><?= h($rubroEmpresa['RubroEmpresa']['nombre']); ?>&nbsp;</td>
-							<td><?= h($rubroEmpresa['RubroEmpresa']['activo']); ?>&nbsp;</td>
+							<td><?= h($rubroEmpresa['RubroEmpresa']['rubro_empresa']); ?>&nbsp;</td>
+							<td><?= ($rubroEmpresa['RubroEmpresa']['activo'] ? '<i class="fa fa-check"></i>' : '<i class="fa fa-remove"></i>'); ?>&nbsp;</td>
 							<td><?= h($rubroEmpresa['RubroEmpresa']['created']); ?>&nbsp;</td>
 							<td>
 								<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $rubroEmpresa['RubroEmpresa']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>

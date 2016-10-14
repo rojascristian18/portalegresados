@@ -26,6 +26,10 @@ class EstudioUsuariosController extends AppController
 				$this->Session->setFlash('Error al guardar el registro. Por favor intenta nuevamente.', null, array(), 'danger');
 			}
 		}
+		$sedes	= $this->EstudioUsuario->Sede->find('list');
+		$usuarios	= $this->EstudioUsuario->Usuario->find('list');
+		$jornadaEstudios	= $this->EstudioUsuario->JornadaEstudio->find('list');
+		$this->set(compact('sedes', 'usuarios', 'jornadaEstudios'));
 	}
 
 	public function admin_edit($id = null)
@@ -54,6 +58,10 @@ class EstudioUsuariosController extends AppController
 				'conditions'	=> array('EstudioUsuario.id' => $id)
 			));
 		}
+		$sedes	= $this->EstudioUsuario->Sede->find('list');
+		$usuarios	= $this->EstudioUsuario->Usuario->find('list');
+		$jornadaEstudios	= $this->EstudioUsuario->JornadaEstudio->find('list');
+		$this->set(compact('sedes', 'usuarios', 'jornadaEstudios'));
 	}
 
 	public function admin_delete($id = null)

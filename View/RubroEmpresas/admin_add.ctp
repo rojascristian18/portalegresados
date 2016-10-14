@@ -11,12 +11,12 @@
 			<?= $this->Form->create('RubroEmpresa', array('class' => 'form-horizontal', 'type' => 'file', 'inputDefaults' => array('label' => false, 'div' => false, 'class' => 'form-control'))); ?>
 				<table class="table">
 					<tr>
-						<th><?= $this->Form->label('nombre', 'Nombre'); ?></th>
-						<td><?= $this->Form->input('nombre'); ?></td>
+						<th><?= $this->Form->label('rubro_empresa', 'Rubro empresa'); ?></th>
+						<td><?= $this->Form->input('rubro_empresa'); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('activo', 'Activo'); ?></th>
-						<td><?= $this->Form->input('activo'); ?></td>
+						<td><?= $this->Form->input('activo', array('class' => 'icheckbox')); ?></td>
 					</tr>
 				</table>
 

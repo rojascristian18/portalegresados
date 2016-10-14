@@ -5,6 +5,7 @@ class Comuna extends AppModel
 	/**
 	 * CONFIGURACION DB
 	 */
+	public $displayField	= 'comuna';
 
 	/**
 	 * BEHAVIORS
@@ -34,6 +35,18 @@ class Comuna extends AppModel
 	/**
 	 * VALIDACIONES
 	 */
+	public $validate = array(
+		'comuna' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+	);
 
 	/**
 	 * ASOCIACIONES

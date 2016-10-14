@@ -35,6 +35,78 @@ class Empleo extends AppModel
 	/**
 	 * VALIDACIONES
 	 */
+	public $validate = array(
+		'titulo' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'nombre_corto' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'requisitos_minimos' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'descripcion' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'vacantes' => array(
+			'numeric' => array(
+				'rule'			=> array('numeric'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'fecha_finaliza' => array(
+			'datetime' => array(
+				'rule'			=> array('datetime'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'activo' => array(
+			'numeric' => array(
+				'rule'			=> array('numeric'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+	);
 
 	/**
 	 * ASOCIACIONES
@@ -49,33 +121,6 @@ class Empleo extends AppModel
 			'counterCache'			=> true,
 			//'counterScope'			=> array('Asociado.modelo' => 'Empresa')
 		),
-		'Cargo' => array(
-			'className'				=> 'Cargo',
-			'foreignKey'			=> 'cargo_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'Cargo')
-		),
-		'Jornada' => array(
-			'className'				=> 'Jornada',
-			'foreignKey'			=> 'jornada_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'Jornada')
-		),
-		'TipoContrato' => array(
-			'className'				=> 'TipoContrato',
-			'foreignKey'			=> 'tipo_contrato_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'TipoContrato')
-		),
 		'Comuna' => array(
 			'className'				=> 'Comuna',
 			'foreignKey'			=> 'comuna_id',
@@ -85,14 +130,23 @@ class Empleo extends AppModel
 			'counterCache'			=> true,
 			//'counterScope'			=> array('Asociado.modelo' => 'Comuna')
 		),
-		'Experiencia' => array(
-			'className'				=> 'Experiencia',
-			'foreignKey'			=> 'experiencia_id',
+		'JornadaLaboral' => array(
+			'className'				=> 'JornadaLaboral',
+			'foreignKey'			=> 'jornada_laboral_id',
 			'conditions'			=> '',
 			'fields'				=> '',
 			'order'					=> '',
 			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'Experiencia')
+			//'counterScope'			=> array('Asociado.modelo' => 'Comuna')
+		),
+		'ContratoOfrecido' => array(
+			'className'				=> 'ContratoOfrecido',
+			'foreignKey'			=> 'contrato_ofrecido_id',
+			'conditions'			=> '',
+			'fields'				=> '',
+			'order'					=> '',
+			'counterCache'			=> true,
+			//'counterScope'			=> array('Asociado.modelo' => 'Comuna')
 		),
 		'EstadoEmpleo' => array(
 			'className'				=> 'EstadoEmpleo',
@@ -103,14 +157,14 @@ class Empleo extends AppModel
 			'counterCache'			=> true,
 			//'counterScope'			=> array('Asociado.modelo' => 'EstadoEmpleo')
 		),
-		'EstudioUsuario' => array(
-			'className'				=> 'EstudioUsuario',
-			'foreignKey'			=> 'estudio_usuario_id',
+		'AnnoExperiencia' => array(
+			'className'				=> 'AnnoExperiencia',
+			'foreignKey'			=> 'anno_experiencia_id',
 			'conditions'			=> '',
 			'fields'				=> '',
 			'order'					=> '',
 			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'EstudioUsuario')
+			//'counterScope'			=> array('Asociado.modelo' => 'EstadoEmpleo')
 		)
 	);
 	public $hasMany = array(
@@ -145,4 +199,140 @@ class Empleo extends AppModel
 			'insertQuery'			=> ''
 		)
 	);
+
+
+	public function afterSave($created = true, $options = array())
+	{
+		parent::afterSave($created, $options);
+
+		/**
+		 * Dispara eventos al guardar empleo (envio correos)
+		 */
+		if ( $created && $this->data['Empleo']['estado_empleo_id'] == 1 && ! empty($this->data['Empleo']) )
+		{	
+			$empleo			= $this->find('first', array(
+				'conditions'	=> array('Empleo.id' => $this->data[$this->alias]['id']),
+				'contain'		=> array(
+					'Empresa'			=> array(
+						'conditions'	=> array(
+							'Empresa.activo'		=> true
+						)
+					),
+					'JornadaLaboral',
+					'ContratoOfrecido',
+					'Comuna' => array(
+						'Ciudad' => array(
+							'Region' => array('Paise')
+						)
+					),
+					'EstadoEmpleo',
+					'AnnoExperiencia'
+				)
+			));
+
+			/*
+			* Buscar administradores que se deben notificar las publicaciones de empleo
+			*/
+			$administradores = ClassRegistry::init('Administrador')->find('all', array(
+					'conditions' => array(
+						'Administrador.notificar_empleo' => 1
+					)
+				)
+			);
+
+			foreach ($administradores as $ix => $administrador) {
+				$empleo['Administrador'][$ix] = $administrador['Administrador'];
+			}
+
+			$evento			= new CakeEvent('Model.Empleo.afterSave', $this, $empleo);
+			$this->getEventManager()->dispatch($evento);
+		}
+
+		/**
+		 * Dispara eventos al publicar empleo (envio correos)
+		 */
+		if ( $this->data['Empleo']['estado_empleo_id'] == 2 && ! empty($this->data['Empleo']) )
+		{	
+			$empleo			= $this->find('first', array(
+				'conditions'	=> array('Empleo.id' => $this->data[$this->alias]['id']),
+				'contain'		=> array(
+					'Empresa'			=> array(
+						'conditions'	=> array(
+							'Empresa.activo'		=> true
+						)
+					),
+					'JornadaLaboral',
+					'ContratoOfrecido',
+					'Comuna' => array(
+						'Ciudad' => array(
+							'Region' => array('Paise')
+						)
+					),
+					'EstadoEmpleo',
+					'AnnoExperiencia'
+				)
+			));
+
+			/*
+			* Buscar administradores que se deben notificar las publicaciones de empleo
+			*/
+			$administradores = ClassRegistry::init('Administrador')->find('all', array(
+					'conditions' => array(
+						'Administrador.notificar_empleo' => 1
+					)
+				)
+			);
+
+			foreach ($administradores as $ix => $administrador) {
+				$empleo['Administrador'][$ix] = $administrador['Administrador'];
+			}
+
+			$evento			= new CakeEvent('Model.Empleo.afterSave', $this, $empleo);
+			$this->getEventManager()->dispatch($evento);
+		}
+
+
+		/**
+		 * Dispara eventos al despublicar empleo (envio correos)
+		 */
+		if ( $this->data['Empleo']['estado_empleo_id'] == 3 && ! empty($this->data['Empleo']) )
+		{	
+			$empleo			= $this->find('first', array(
+				'conditions'	=> array('Empleo.id' => $this->data[$this->alias]['id']),
+				'contain'		=> array(
+					'Empresa'			=> array(
+						'conditions'	=> array(
+							'Empresa.activo'		=> true
+						)
+					),
+					'JornadaLaboral',
+					'ContratoOfrecido',
+					'Comuna' => array(
+						'Ciudad' => array(
+							'Region' => array('Paise')
+						)
+					),
+					'EstadoEmpleo',
+					'AnnoExperiencia'
+				)
+			));
+
+			/*
+			* Buscar administradores que se deben notificar las publicaciones de empleo
+			*/
+			$administradores = ClassRegistry::init('Administrador')->find('all', array(
+					'conditions' => array(
+						'Administrador.notificar_empleo' => 1
+					)
+				)
+			);
+
+			foreach ($administradores as $ix => $administrador) {
+				$empleo['Administrador'][$ix] = $administrador['Administrador'];
+			}
+
+			$evento			= new CakeEvent('Model.Empleo.afterSave', $this, $empleo);
+			$this->getEventManager()->dispatch($evento);
+		}
+	}
 }

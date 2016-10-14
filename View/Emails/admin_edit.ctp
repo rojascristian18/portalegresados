@@ -57,11 +57,11 @@
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('procesado', 'Procesado'); ?></th>
-						<td><?= $this->Form->input('procesado'); ?></td>
+						<td><?= $this->Form->input('procesado', array('class' => 'icheckbox')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('enviado', 'Enviado'); ?></th>
-						<td><?= $this->Form->input('enviado'); ?></td>
+						<td><?= $this->Form->input('enviado', array('class' => 'icheckbox')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('reintentos', 'Reintentos'); ?></th>

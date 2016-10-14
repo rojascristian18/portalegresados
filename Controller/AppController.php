@@ -10,21 +10,20 @@ class AppController extends Controller
 	public $components	= array(
 		'Session',
 		'Auth'		=> array(
-			'loginAction'		=> array('controller' => 'administradores', 'action' => 'login', 'admin' => true),
-			'loginRedirect'		=> '/admin',
-			'logoutRedirect'	=> '/admin',
 			'authError'			=> 'No tienes permisos para entrar a esta sección.',
-			'authenticate'		=> array(
-				'Form'				=> array(
-					'userModel'			=> 'Usuario',
-					'fields'			=> array(
-						'username'			=> 'email',
-						'password'			=> 'clave'
-					)
+			'Form'				=> array(
+				'fields' => array(
+					'username'	=> 'email',
+					'password'	=> 'clave'
 				)
 			)
 		),
 		'DebugKit.Toolbar',
+		'Breadcrumb' => array(
+			'crumbs'		=> array(
+				array('Inicio', '/job')
+			)
+		)
 		//'Facebook.Connect'	=> array('model' => 'Usuario'),
 		//'Facebook'
 	);
@@ -38,11 +37,67 @@ class AppController extends Controller
 		{
 			$this->layoutPath				= 'backend';
 			AuthComponent::$sessionKey		= 'Auth.Administrador';
+
+			// Login action config
+			$this->Auth->loginAction['controller'] 	= 'administradores';
+			$this->Auth->loginAction['action'] 		= 'login';
+			$this->Auth->loginAction['admin'] 		= true;
+
+			// Login redirect and logout redirect
+			$this->Auth->loginRedirect = '/admin';
+			$this->Auth->logoutRedirect = '/admin';
+
+			// Login Form config
 			$this->Auth->authenticate['Form']['userModel']		= 'Administrador';
+			$this->Auth->authenticate['Form']['fields']['username'] = 'email';
+			$this->Auth->authenticate['Form']['fields']['password'] = 'clave';			
 		}
-		else
-		{
-			AuthComponent::$sessionKey	= 'Auth.Usuario';
+
+		/**
+		* Layout empresas
+		*/
+		if ( ! empty($this->request->params['job']) ) {
+			$this->layoutPath				= 'backend';
+			AuthComponent::$sessionKey		= 'Auth.Empresa';
+			// Login action config
+			$this->Auth->loginAction['controller'] 	= 'empresas';
+			$this->Auth->loginAction['action'] 		= 'login';
+			$this->Auth->loginAction['job'] 		= true;
+
+			// Login redirect and logout redirect
+			$this->Auth->loginRedirect = '/job';
+			$this->Auth->logoutRedirect = '/job';
+
+			// Login Form config
+			$this->Auth->authenticate['Form']['userModel']		= 'Empresa';
+			$this->Auth->authenticate['Form']['fields']['username'] = 'email';
+			$this->Auth->authenticate['Form']['fields']['password'] = 'clave';
+		}
+
+		/**
+		* Layout exalumnos
+		*/
+		if ( ! empty($this->request->params['student']) ) {
+			$this->layoutPath				= 'backend';
+			AuthComponent::$sessionKey		= 'Auth.Exalumno';
+
+			// Login action config
+			$this->Auth->loginAction['controller'] 	= 'usuarios';
+			$this->Auth->loginAction['action'] 		= 'login';
+			$this->Auth->loginAction['student'] 		= true;
+
+			// Login redirect and logout redirect
+			$this->Auth->loginRedirect = '/student';
+			$this->Auth->logoutRedirect = '/student';
+
+			// Login Form config
+			$this->Auth->authenticate['Form']['userModel']		= 'Usuario';
+			$this->Auth->authenticate['Form']['fields']['username'] = 'email';
+			$this->Auth->authenticate['Form']['fields']['password'] = 'clave';
+		}
+
+		if( empty($this->request->params['student']) &&  empty($this->request->params['job']) && empty($this->request->params['admin']) ) {
+			AuthComponent::$sessionKey		= 'Auth.Visitante';
 			$this->Auth->allow();
 		}
 
@@ -97,5 +152,15 @@ class AppController extends Controller
 		}
 
 		return true;
+	}
+
+
+	public function beforeRender() {
+		// Camino de migas
+		$breadcrumbs	= BreadcrumbComponent::get();
+		if ( ! empty($breadcrumbs) )
+		{
+			$this->set(compact('breadcrumbs'));
+		}
 	}
 }

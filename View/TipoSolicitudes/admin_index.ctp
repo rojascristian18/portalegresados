@@ -26,7 +26,7 @@
 						<?php foreach ( $tipoSolicitudes as $tipoSolicitud ) : ?>
 						<tr>
 							<td><?= h($tipoSolicitud['TipoSolicitud']['tipo_solicitud']); ?>&nbsp;</td>
-							<td><?= h($tipoSolicitud['TipoSolicitud']['activo']); ?>&nbsp;</td>
+							<td><?= ($tipoSolicitud['TipoSolicitud']['activo'] ? '<i class="fa fa-check"></i>' : '<i class="fa fa-remove"></i>'); ?>&nbsp;</td>
 							<td><?= h($tipoSolicitud['TipoSolicitud']['created']); ?>&nbsp;</td>
 							<td>
 								<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $tipoSolicitud['TipoSolicitud']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>

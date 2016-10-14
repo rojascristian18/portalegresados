@@ -35,6 +35,128 @@ class Estudio extends AppModel
 	/**
 	 * VALIDACIONES
 	 */
+	public $validate = array(
+		'nombre' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'nombre_corto' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'duracion' => array(
+			'numeric' => array(
+				'rule'			=> array('numeric'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'duracion_hora' => array(
+			'numeric' => array(
+				'rule'			=> array('numeric'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'fecha_inicio' => array(
+			'date' => array(
+				'rule'			=> array('date'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'fecha_termino' => array(
+			'date' => array(
+				'rule'			=> array('date'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'descripcion' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'objetivo' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'requisitos' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'perfil_ocupacional' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'perfil_egresado' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'activo' => array(
+			'numeric' => array(
+				'rule'			=> array('numeric'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+	);
 
 	/**
 	 * ASOCIACIONES
@@ -57,21 +179,6 @@ class Estudio extends AppModel
 			'order'					=> '',
 			'counterCache'			=> true,
 			//'counterScope'			=> array('Asociado.modelo' => 'ModalidadEstudio')
-		)
-	);
-	public $hasMany = array(
-		'Usuario' => array(
-			'className'				=> 'Usuario',
-			'foreignKey'			=> 'estudio_id',
-			'dependent'				=> false,
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'limit'					=> '',
-			'offset'				=> '',
-			'exclusive'				=> '',
-			'finderQuery'			=> '',
-			'counterQuery'			=> ''
 		)
 	);
 	public $hasAndBelongsToMany = array(

@@ -12,8 +12,8 @@
 				<table class="table">
 					<?= $this->Form->input('id'); ?>
 					<tr>
-						<th><?= $this->Form->label('cantidad', 'Cantidad'); ?></th>
-						<td><?= $this->Form->input('cantidad'); ?></td>
+						<th><?= $this->Form->label('cantidad_empleado', 'Cantidad empleado'); ?></th>
+						<td><?= $this->Form->input('cantidad_empleado'); ?></td>
 					</tr>
 				</table>
 

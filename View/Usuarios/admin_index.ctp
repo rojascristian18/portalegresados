@@ -16,22 +16,22 @@
 				<table class="table">
 					<thead>
 						<tr class="sort">
-							<th><?= $this->Paginator->sort('jornada_estudio_id', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
-							<th><?= $this->Paginator->sort('sede_id', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
-							<th><?= $this->Paginator->sort('estudio_id', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
-							<th><?= $this->Paginator->sort('estudio_usuario_id', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
-							<th><?= $this->Paginator->sort('experiencia_id', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
+							<th><?= $this->Paginator->sort('comuna_id', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
+							<th><?= $this->Paginator->sort('pregunta_id', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
+							<th><?= $this->Paginator->sort('situacion_laboral_id', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
+							<th><?= $this->Paginator->sort('nombre', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
+							<th><?= $this->Paginator->sort('apellido', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
 							<th>Acciones</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php foreach ( $usuarios as $usuario ) : ?>
 						<tr>
-							<td><?= $this->Html->link($usuario['JornadaEstudio']['nombre'], array('controller' => 'jornada_estudios', 'action' => 'edit', $usuario['JornadaEstudio']['id'])); ?></td>
-							<td><?= $this->Html->link($usuario['Sede']['id'], array('controller' => 'sedes', 'action' => 'edit', $usuario['Sede']['id'])); ?></td>
-							<td><?= $this->Html->link($usuario['Estudio']['nombre'], array('controller' => 'estudios', 'action' => 'edit', $usuario['Estudio']['id'])); ?></td>
-							<td><?= $this->Html->link($usuario['EstudioUsuario']['nombre'], array('controller' => 'estudio_usuarios', 'action' => 'edit', $usuario['EstudioUsuario']['id'])); ?></td>
-							<td><?= $this->Html->link($usuario['Experiencia']['id'], array('controller' => 'experiencias', 'action' => 'edit', $usuario['Experiencia']['id'])); ?></td>
+							<td><?= $this->Html->link($usuario['Comuna']['id'], array('controller' => 'comunas', 'action' => 'edit', $usuario['Comuna']['id'])); ?></td>
+							<td><?= $this->Html->link($usuario['Pregunta']['id'], array('controller' => 'preguntas', 'action' => 'edit', $usuario['Pregunta']['id'])); ?></td>
+							<td><?= $this->Html->link($usuario['SituacionLaboral']['id'], array('controller' => 'situacion_laborales', 'action' => 'edit', $usuario['SituacionLaboral']['id'])); ?></td>
+							<td><?= h($usuario['Usuario']['nombre']); ?>&nbsp;</td>
+							<td><?= h($usuario['Usuario']['apellido']); ?>&nbsp;</td>
 							<td>
 								<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $usuario['Usuario']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>
 								<?= $this->Form->postLink('<i class="fa fa-remove"></i> Eliminar', array('action' => 'delete', $usuario['Usuario']['id']), array('class' => 'btn btn-xs btn-danger confirmar-eliminacion', 'rel' => 'tooltip', 'title' => 'Eliminar este registro', 'escape' => false)); ?>

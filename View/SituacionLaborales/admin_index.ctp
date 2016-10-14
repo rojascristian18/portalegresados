@@ -26,7 +26,7 @@
 						<?php foreach ( $situacionLaborales as $situacionLaboral ) : ?>
 						<tr>
 							<td><?= h($situacionLaboral['SituacionLaboral']['situacion_laboral']); ?>&nbsp;</td>
-							<td><?= h($situacionLaboral['SituacionLaboral']['activo']); ?>&nbsp;</td>
+							<td><?= ($situacionLaboral['SituacionLaboral']['activo'] ? '<i class="fa fa-check"></i>' : '<i class="fa fa-remove"></i>'); ?>&nbsp;</td>
 							<td><?= h($situacionLaboral['SituacionLaboral']['created']); ?>&nbsp;</td>
 							<td>
 								<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $situacionLaboral['SituacionLaboral']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>

@@ -56,7 +56,7 @@
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('activo', 'Activo'); ?></th>
-						<td><?= $this->Form->input('activo'); ?></td>
+						<td><?= $this->Form->input('activo', array('class' => 'icheckbox')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('last_login', 'Last login'); ?></th>

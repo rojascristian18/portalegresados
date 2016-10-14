@@ -35,92 +35,73 @@ class Usuario extends AppModel
 	/**
 	 * VALIDACIONES
 	 */
+	public $validate = array(
+		'nombre' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'apellido' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'rut' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'email' => array(
+			'email' => array(
+				'rule'			=> array('email'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'clave' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'respuesta' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+	);
 
 	/**
 	 * ASOCIACIONES
 	 */
 	public $belongsTo = array(
-		'JornadaEstudio' => array(
-			'className'				=> 'JornadaEstudio',
-			'foreignKey'			=> 'jornada_estudio_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'JornadaEstudio')
-		),
-		'Sede' => array(
-			'className'				=> 'Sede',
-			'foreignKey'			=> 'sede_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'Sede')
-		),
-		'Estudio' => array(
-			'className'				=> 'Estudio',
-			'foreignKey'			=> 'estudio_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'Estudio')
-		),
-		'EstudioUsuario' => array(
-			'className'				=> 'EstudioUsuario',
-			'foreignKey'			=> 'estudio_usuario_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'EstudioUsuario')
-		),
-		'Experiencia' => array(
-			'className'				=> 'Experiencia',
-			'foreignKey'			=> 'experiencia_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'Experiencia')
-		),
-		'Jornada' => array(
-			'className'				=> 'Jornada',
-			'foreignKey'			=> 'jornada_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'Jornada')
-		),
-		'Cargo' => array(
-			'className'				=> 'Cargo',
-			'foreignKey'			=> 'cargo_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'Cargo')
-		),
-		'TipoContrato' => array(
-			'className'				=> 'TipoContrato',
-			'foreignKey'			=> 'tipo_contrato_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'TipoContrato')
-		),
-		'SituacionLaboral' => array(
-			'className'				=> 'SituacionLaboral',
-			'foreignKey'			=> 'situacion_laboral_id',
-			'conditions'			=> '',
-			'fields'				=> '',
-			'order'					=> '',
-			'counterCache'			=> true,
-			//'counterScope'			=> array('Asociado.modelo' => 'SituacionLaboral')
-		),
 		'Comuna' => array(
 			'className'				=> 'Comuna',
 			'foreignKey'			=> 'comuna_id',
@@ -138,6 +119,15 @@ class Usuario extends AppModel
 			'order'					=> '',
 			'counterCache'			=> true,
 			//'counterScope'			=> array('Asociado.modelo' => 'Pregunta')
+		),
+		'SituacionLaboral' => array(
+			'className'				=> 'SituacionLaboral',
+			'foreignKey'			=> 'situacion_laboral_id',
+			'conditions'			=> '',
+			'fields'				=> '',
+			'order'					=> '',
+			'counterCache'			=> true,
+			//'counterScope'			=> array('Asociado.modelo' => 'SituacionLaboral')
 		)
 	);
 	public $hasMany = array(

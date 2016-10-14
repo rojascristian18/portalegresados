@@ -11,48 +11,16 @@
 			<?= $this->Form->create('Usuario', array('class' => 'form-horizontal', 'type' => 'file', 'inputDefaults' => array('label' => false, 'div' => false, 'class' => 'form-control'))); ?>
 				<table class="table">
 					<tr>
-						<th><?= $this->Form->label('jornada_estudio_id', 'Jornada estudio'); ?></th>
-						<td><?= $this->Form->input('jornada_estudio_id'); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('sede_id', 'Sede'); ?></th>
-						<td><?= $this->Form->input('sede_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('estudio_id', 'Estudio'); ?></th>
-						<td><?= $this->Form->input('estudio_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('estudio_usuario_id', 'Estudio usuario'); ?></th>
-						<td><?= $this->Form->input('estudio_usuario_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('experiencia_id', 'Experiencia'); ?></th>
-						<td><?= $this->Form->input('experiencia_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('jornada_id', 'Jornada'); ?></th>
-						<td><?= $this->Form->input('jornada_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('cargo_id', 'Cargo'); ?></th>
-						<td><?= $this->Form->input('cargo_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('tipo_contrato_id', 'Tipo contrato'); ?></th>
-						<td><?= $this->Form->input('tipo_contrato_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('situacion_laboral_id', 'Situacion laboral'); ?></th>
-						<td><?= $this->Form->input('situacion_laboral_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
 						<th><?= $this->Form->label('comuna_id', 'Comuna'); ?></th>
 						<td><?= $this->Form->input('comuna_id', array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('pregunta_id', 'Pregunta'); ?></th>
 						<td><?= $this->Form->input('pregunta_id', array('class' => 'form-control select')); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('situacion_laboral_id', 'Situacion laboral'); ?></th>
+						<td><?= $this->Form->input('situacion_laboral_id', array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('nombre', 'Nombre'); ?></th>
@@ -112,7 +80,23 @@
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('activo', 'Activo'); ?></th>
-						<td><?= $this->Form->input('activo'); ?></td>
+						<td><?= $this->Form->input('activo', array('class' => 'icheckbox')); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('postulacion_count', 'Postulacion count'); ?></th>
+						<td><?= $this->Form->input('postulacion_count', array('class' => 'form-control select')); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('solicitud_count', 'Solicitud count'); ?></th>
+						<td><?= $this->Form->input('solicitud_count', array('class' => 'form-control select')); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('licencia_conducir', 'Licencia conducir'); ?></th>
+						<td><?= $this->Form->input('licencia_conducir', array('class' => 'icheckbox')); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('nombre_licencia_conducir', 'Nombre licencia conducir'); ?></th>
+						<td><?= $this->Form->input('nombre_licencia_conducir'); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('last_login', 'Last login'); ?></th>

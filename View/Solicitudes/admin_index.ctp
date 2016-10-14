@@ -31,7 +31,7 @@
 							<td><?= $this->Html->link($solicitud['Usuario']['nombre'], array('controller' => 'usuarios', 'action' => 'edit', $solicitud['Usuario']['id'])); ?></td>
 							<td><?= h($solicitud['Solicitud']['nombre']); ?>&nbsp;</td>
 							<td><?= h($solicitud['Solicitud']['descripcion']); ?>&nbsp;</td>
-							<td><?= h($solicitud['Solicitud']['activo']); ?>&nbsp;</td>
+							<td><?= ($solicitud['Solicitud']['activo'] ? '<i class="fa fa-check"></i>' : '<i class="fa fa-remove"></i>'); ?>&nbsp;</td>
 							<td>
 								<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $solicitud['Solicitud']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>
 								<?= $this->Form->postLink('<i class="fa fa-remove"></i> Eliminar', array('action' => 'delete', $solicitud['Solicitud']['id']), array('class' => 'btn btn-xs btn-danger confirmar-eliminacion', 'rel' => 'tooltip', 'title' => 'Eliminar este registro', 'escape' => false)); ?>

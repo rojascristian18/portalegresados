@@ -15,10 +15,6 @@
 						<td><?= $this->Form->input('empresa_id', array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
-						<th><?= $this->Form->label('cargo_id', 'Cargo'); ?></th>
-						<td><?= $this->Form->input('cargo_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
 						<th><?= $this->Form->label('jornada_id', 'Jornada'); ?></th>
 						<td><?= $this->Form->input('jornada_id', array('class' => 'form-control select')); ?></td>
 					</tr>
@@ -31,16 +27,12 @@
 						<td><?= $this->Form->input('comuna_id', array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
-						<th><?= $this->Form->label('experiencia_id', 'Experiencia'); ?></th>
-						<td><?= $this->Form->input('experiencia_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
 						<th><?= $this->Form->label('estado_empleo_id', 'Estado empleo'); ?></th>
 						<td><?= $this->Form->input('estado_empleo_id', array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
-						<th><?= $this->Form->label('estudio_usuario_id', 'Estudio usuario'); ?></th>
-						<td><?= $this->Form->input('estudio_usuario_id', array('class' => 'form-control select')); ?></td>
+						<th><?= $this->Form->label('experiencia_id', 'Experiencia'); ?></th>
+						<td><?= $this->Form->input('experiencia_id', array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('titulo', 'Titulo'); ?></th>
@@ -51,12 +43,12 @@
 						<td><?= $this->Form->input('nombre_corto'); ?></td>
 					</tr>
 					<tr>
-						<th><?= $this->Form->label('descripcion', 'Descripcion'); ?></th>
-						<td><?= $this->Form->input('descripcion'); ?></td>
-					</tr>
-					<tr>
 						<th><?= $this->Form->label('requisitos_minimos', 'Requisitos minimos'); ?></th>
 						<td><?= $this->Form->input('requisitos_minimos'); ?></td>
+					</tr>
+					<tr>
+						<th><?= $this->Form->label('descripcion', 'Descripcion'); ?></th>
+						<td><?= $this->Form->input('descripcion'); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('sueldo', 'Sueldo'); ?></th>
@@ -76,11 +68,11 @@
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('cerrar_empleo', 'Cerrar empleo'); ?></th>
-						<td><?= $this->Form->input('cerrar_empleo'); ?></td>
+						<td><?= $this->Form->input('cerrar_empleo', array('class' => 'icheckbox')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('activo', 'Activo'); ?></th>
-						<td><?= $this->Form->input('activo'); ?></td>
+						<td><?= $this->Form->input('activo', array('class' => 'icheckbox')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('cerrada', 'Cerrada'); ?></th>

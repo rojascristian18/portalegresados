@@ -5,7 +5,6 @@ class EstudioUsuario extends AppModel
 	/**
 	 * CONFIGURACION DB
 	 */
-	public $displayField	= 'nombre';
 
 	/**
 	 * BEHAVIORS
@@ -35,36 +34,89 @@ class EstudioUsuario extends AppModel
 	/**
 	 * VALIDACIONES
 	 */
+	public $validate = array(
+		'otra_insitucion' => array(
+			'numeric' => array(
+				'rule'			=> array('numeric'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'carrera_completa' => array(
+			'numeric' => array(
+				'rule'			=> array('numeric'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'descripcion' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'fecha_inicio' => array(
+			'date' => array(
+				'rule'			=> array('date'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'fecha_termino' => array(
+			'date' => array(
+				'rule'			=> array('date'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+	);
 
 	/**
 	 * ASOCIACIONES
 	 */
-	public $hasMany = array(
-		'Empleo' => array(
-			'className'				=> 'Empleo',
-			'foreignKey'			=> 'estudio_usuario_id',
-			'dependent'				=> false,
+	public $belongsTo = array(
+		'Sede' => array(
+			'className'				=> 'Sede',
+			'foreignKey'			=> 'sede_id',
 			'conditions'			=> '',
 			'fields'				=> '',
 			'order'					=> '',
-			'limit'					=> '',
-			'offset'				=> '',
-			'exclusive'				=> '',
-			'finderQuery'			=> '',
-			'counterQuery'			=> ''
+			'counterCache'			=> true,
+			//'counterScope'			=> array('Asociado.modelo' => 'Sede')
 		),
 		'Usuario' => array(
 			'className'				=> 'Usuario',
-			'foreignKey'			=> 'estudio_usuario_id',
-			'dependent'				=> false,
+			'foreignKey'			=> 'usuario_id',
 			'conditions'			=> '',
 			'fields'				=> '',
 			'order'					=> '',
-			'limit'					=> '',
-			'offset'				=> '',
-			'exclusive'				=> '',
-			'finderQuery'			=> '',
-			'counterQuery'			=> ''
+			'counterCache'			=> true,
+			//'counterScope'			=> array('Asociado.modelo' => 'Usuario')
+		),
+		'JornadaEstudio' => array(
+			'className'				=> 'JornadaEstudio',
+			'foreignKey'			=> 'jornada_estudio_id',
+			'conditions'			=> '',
+			'fields'				=> '',
+			'order'					=> '',
+			'counterCache'			=> true,
+			//'counterScope'			=> array('Asociado.modelo' => 'JornadaEstudio')
 		)
 	);
 }

@@ -27,8 +27,8 @@
 						<td><?= $this->Form->input('pregunta_id', array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
-						<th><?= $this->Form->label('rut_empresa', 'Rut empresa'); ?></th>
-						<td><?= $this->Form->input('rut_empresa'); ?></td>
+						<th><?= $this->Form->label('rut', 'Rut'); ?></th>
+						<td><?= $this->Form->input('rut'); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('clave', 'Clave'); ?></th>
@@ -76,7 +76,7 @@
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('activo', 'Activo'); ?></th>
-						<td><?= $this->Form->input('activo'); ?></td>
+						<td><?= $this->Form->input('activo', array('class' => 'icheckbox')); ?></td>
 					</tr>
 				</table>
 

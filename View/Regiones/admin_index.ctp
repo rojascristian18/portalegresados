@@ -30,7 +30,7 @@
 							<td><?= h($region['Region']['pais_id']); ?>&nbsp;</td>
 							<td><?= h($region['Region']['region']); ?>&nbsp;</td>
 							<td><?= h($region['Region']['codigo_region']); ?>&nbsp;</td>
-							<td><?= h($region['Region']['activo']); ?>&nbsp;</td>
+							<td><?= ($region['Region']['activo'] ? '<i class="fa fa-check"></i>' : '<i class="fa fa-remove"></i>'); ?>&nbsp;</td>
 							<td><?= h($region['Region']['created']); ?>&nbsp;</td>
 							<td>
 								<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $region['Region']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>

@@ -27,7 +27,7 @@
 						<?php foreach ( $perfiles as $perfil ) : ?>
 						<tr>
 							<td><?= h($perfil['Perfil']['perfil']); ?>&nbsp;</td>
-							<td><?= h($perfil['Perfil']['activo']); ?>&nbsp;</td>
+							<td><?= ($perfil['Perfil']['activo'] ? '<i class="fa fa-check"></i>' : '<i class="fa fa-remove"></i>'); ?>&nbsp;</td>
 							<td><?= h($perfil['Perfil']['administrador_count']); ?>&nbsp;</td>
 							<td><?= h($perfil['Perfil']['created']); ?>&nbsp;</td>
 							<td>

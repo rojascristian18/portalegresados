@@ -28,7 +28,7 @@
 						<tr>
 							<td><?= h($paise['Paise']['pais']); ?>&nbsp;</td>
 							<td><?= h($paise['Paise']['codigo_pais']); ?>&nbsp;</td>
-							<td><?= h($paise['Paise']['activo']); ?>&nbsp;</td>
+							<td><?= ($paise['Paise']['activo'] ? '<i class="fa fa-check"></i>' : '<i class="fa fa-remove"></i>'); ?>&nbsp;</td>
 							<td><?= h($paise['Paise']['created']); ?>&nbsp;</td>
 							<td>
 								<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $paise['Paise']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>

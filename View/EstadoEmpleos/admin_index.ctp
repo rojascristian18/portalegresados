@@ -25,7 +25,7 @@
 						<?php foreach ( $estadoEmpleos as $estadoEmpleo ) : ?>
 						<tr>
 							<td><?= h($estadoEmpleo['EstadoEmpleo']['estado']); ?>&nbsp;</td>
-							<td><?= h($estadoEmpleo['EstadoEmpleo']['activo']); ?>&nbsp;</td>
+							<td><?= ($estadoEmpleo['EstadoEmpleo']['activo'] ? '<i class="fa fa-check"></i>' : '<i class="fa fa-remove"></i>'); ?>&nbsp;</td>
 							<td>
 								<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $estadoEmpleo['EstadoEmpleo']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>
 								<?= $this->Form->postLink('<i class="fa fa-remove"></i> Eliminar', array('action' => 'delete', $estadoEmpleo['EstadoEmpleo']['id']), array('class' => 'btn btn-xs btn-danger confirmar-eliminacion', 'rel' => 'tooltip', 'title' => 'Eliminar este registro', 'escape' => false)); ?>
