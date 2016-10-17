@@ -18,7 +18,8 @@
 						<?=$this->html->link('Ver mi oferta', array(
 							'controller' => 'empleos', 
 							'action' => 'mis_ofertas', 
-							'job' => true, 
+							'job' => true,
+							'full_base' => true,
 							$alerta['Empleo']['id']), array(
 							'style' => 'background-color:#43AB86; font-size: 14px; font-family: arial, helvetica, sans-serif; color: #ffffff; padding: 5px 15px; text-decoration: none;'
 							)

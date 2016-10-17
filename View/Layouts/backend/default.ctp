@@ -23,7 +23,7 @@
 		<?= $this->Html->scriptBlock("var fullwebroot = '{$this->Html->url('', true)}';"); ?>
 		<?= $this->Html->script(array(
 			'/backend/js/plugins/jquery/jquery.min',
-			//'/backend/js/plugins/jquery/jquery-ui.min',
+			'/backend/js/plugins/jquery/jquery-ui.min',
 			'/backend/js/plugins/bootstrap/bootstrap.min',
 			'/backend/js/plugins/bootstrap/bootstrap-select',
 			'/backend/js/plugins/bootstrap/bootstrap-datepicker',
@@ -38,6 +38,7 @@
 			'/backend/js/plugins/codemirror/mode/clike/clike',
 			'/backend/js/plugins/codemirror/mode/php/php',
 			'/backend/js/plugins/summernote/summernote',
+			'/backend/js/plugins/jquery-validation/jquery.validate',
 			'/backend/js/custom',
 			/*
 			'/backend/js/plugins/bootstrap/bootstrap-datepicker',

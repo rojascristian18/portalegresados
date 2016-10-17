@@ -88,7 +88,17 @@ class Empleo extends AppModel
 		),
 		'fecha_finaliza' => array(
 			'datetime' => array(
-				'rule'			=> array('datetime'),
+				'rule'			=> array('date'),
+				'last'			=> true,
+				//'message'		=> 'Mensaje de validación personalizado',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'horafinaliza' => array(
+			'datetime' => array(
+				'rule'			=> array('time'),
 				'last'			=> true,
 				//'message'		=> 'Mensaje de validación personalizado',
 				//'allowEmpty'	=> true,
@@ -296,6 +306,49 @@ class Empleo extends AppModel
 		 * Dispara eventos al despublicar empleo (envio correos)
 		 */
 		if ( $this->data['Empleo']['estado_empleo_id'] == 3 && ! empty($this->data['Empleo']) )
+		{	
+			$empleo			= $this->find('first', array(
+				'conditions'	=> array('Empleo.id' => $this->data[$this->alias]['id']),
+				'contain'		=> array(
+					'Empresa'			=> array(
+						'conditions'	=> array(
+							'Empresa.activo'		=> true
+						)
+					),
+					'JornadaLaboral',
+					'ContratoOfrecido',
+					'Comuna' => array(
+						'Ciudad' => array(
+							'Region' => array('Paise')
+						)
+					),
+					'EstadoEmpleo',
+					'AnnoExperiencia'
+				)
+			));
+
+			/*
+			* Buscar administradores que se deben notificar las publicaciones de empleo
+			*/
+			$administradores = ClassRegistry::init('Administrador')->find('all', array(
+					'conditions' => array(
+						'Administrador.notificar_empleo' => 1
+					)
+				)
+			);
+
+			foreach ($administradores as $ix => $administrador) {
+				$empleo['Administrador'][$ix] = $administrador['Administrador'];
+			}
+
+			$evento			= new CakeEvent('Model.Empleo.afterSave', $this, $empleo);
+			$this->getEventManager()->dispatch($evento);
+		}
+
+		/**
+		 * Dispara eventos al empleo editado no publicado empleo (envio correos)
+		 */
+		if ( $this->data['Empleo']['estado_empleo_id'] == 4 && ! empty($this->data['Empleo']) )
 		{	
 			$empleo			= $this->find('first', array(
 				'conditions'	=> array('Empleo.id' => $this->data[$this->alias]['id']),

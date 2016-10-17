@@ -36,8 +36,12 @@ class EmpleoListener implements CakeEventListener
 		if (  $evento->data['Empleo']['estado_empleo_id'] == 1  ) {
 
 			$evento->data['titulo'] = 'Su oferta de empleo ha sido recibida con éxito';
-			$evento->data['cuerpo'] = 'Se le notificará por este medio cuando su empleo  ' . $alerta['Empleo']['titulo'] . 'se encuentre publicado en el portal.';
+			$evento->data['cuerpo'] = sprintf('Se le notificará por este medio cuando su empleo %s se encuentre publicado en el portal.', $evento->data['Empleo']['titulo']);
 			$evento->data['asunto'] = 'Oferta de empleo recibida - Portal Egresados Manpower';
+
+			$evento->data['asunto_admin'] = sprintf('Nuevo empleo agregado: %s - %s', $evento->data['Empleo']['titulo'], $evento->data['Empresa']['nombre']);
+			$evento->data['titulo_admin'] = 'Nueva oferta de empleo recibida';
+			$evento->data['cuerpo_admin'] = sprintf('Un nuevo empleo publicado por %s necesita de su aprobación.', $evento->data['Empresa']['nombre']);
 
 		}
 
@@ -47,7 +51,7 @@ class EmpleoListener implements CakeEventListener
 			$notificarAdministrador = false;
 
 			$evento->data['titulo'] = '¡Felicidades! Su oferta de empleo ha sido publicada en nuestro portal';
-			$evento->data['cuerpo'] = 'Su oferta de empleo ' . $evento->data['Empleo']['titulo'] . ' ya se encuentra publicado en el portal.';
+			$evento->data['cuerpo'] = sprintf('Su oferta de empleo %s ya se encuentra publicado en el portal.', $evento->data['Empleo']['titulo']);
 			$evento->data['asunto'] = '¡Felicidades! su oferta fue publicada - Portal Egresados Manpower';
 
 		}
@@ -58,9 +62,23 @@ class EmpleoListener implements CakeEventListener
 			$notificarAdministrador = false;
 
 			$evento->data['titulo'] = 'Su oferta de empleo ha sido quitada de nuestro portal';
-			$evento->data['cuerpo'] = 'Su oferta de empleo ' . $evento->data['Empleo']['titulo'] . ' se ha quitado del portal.';
+			$evento->data['cuerpo'] = sprintf('Su oferta de empleo %s se ha quitado del portal.', $evento->data['Empleo']['titulo']);
 			$evento->data['asunto'] = 'Su oferta de empleo fue quitada - Portal Egresados Manpower';
 				
+		}
+
+
+		// Empleo editado pendiente
+		if (  $evento->data['Empleo']['estado_empleo_id'] == 4  ) {
+
+			$evento->data['titulo'] = 'Su oferta de empleo ha sido recibida con éxito';
+			$evento->data['cuerpo'] = sprintf('Su oferta de empleo será revisada y se le notificará por este medio cuando su empleo  %s se encuentre publicado en el portal.', $evento->data['Empleo']['titulo']);
+			$evento->data['asunto'] = 'Oferta de empleo recibida - Portal Egresados Manpower';
+
+			$evento->data['asunto_admin'] = sprintf('Un empleo ha sido editado: %s - %s', $evento->data['Empleo']['titulo'], $evento->data['Empresa']['nombre']);
+			$evento->data['titulo_admin'] = 'Oferta de empleo editada recibida';
+			$evento->data['cuerpo_admin'] = sprintf('La empresa %s ha editado su oferta de empleo con la siguiente información:', $evento->data['Empresa']['nombre']);
+
 		}
 		
 		/**
@@ -91,7 +109,7 @@ class EmpleoListener implements CakeEventListener
 			$this->Email->save(array(
 				'estado'					=> 'Empleo',
 				'html'						=> $html,
-				'asunto'					=> sprintf('Nuevo empleo agregado: %s - %s', $alerta['Empresa']['nombre'], $alerta['Empleo']['titulo']),
+				'asunto'					=> $alerta['asunto_admin'],
 				'destinatario_email'		=> $contacto,
 				'destinatario_nombre'		=> sprintf('Contactos %s', $contactoNombre),
 				'remitente_email'			=> 'leads@brandon.cl',

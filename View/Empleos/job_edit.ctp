@@ -1,95 +1,214 @@
-<div class="page-title">
-	<h2><span class="fa fa-list"></span> Empleos</h2>
-</div>
-
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Editar Empleo</h3>
+<?=$this->element('template/breadcrumbs');?>
+<div class="page-content-wrap">
+	<div class="row">
+		<div class="col-sm-12 col-xs-12">
+			<h2><span class="fa fa-briefcase"></span> Editar Ofertas de Empleo</h2>
+		</div>
 	</div>
-	<div class="panel-body">
-		<div class="table-responsive">
-			<?= $this->Form->create('Empleo', array('class' => 'form-horizontal', 'type' => 'file', 'inputDefaults' => array('label' => false, 'div' => false, 'class' => 'form-control'))); ?>
-				<table class="table">
-					<?= $this->Form->input('id'); ?>
-					<tr>
-						<th><?= $this->Form->label('empresa_id', 'Empresa'); ?></th>
-						<td><?= $this->Form->input('empresa_id', array('class' => 'form-control select')); ?></td>
+	<div class="row">
+		<div class="col-xs-12">
+			<table class="table custom-table">
+				<thead>
+					<th>Ediciones disponibles</th>
+					<th>Fecha de creación</th>
+					<th>Última modificación</th>
+				</thead>
+				<tbody>
+					<tr class="info">
+						<td><span class="info-empleo"><?=$this->request->data['Empleo']['editado_count'];?></span></td>
+						<td><span class="info-empleo"><?= date('Y-m-d H:i:s', strtotime($this->request->data['Empleo']['created'])); ?></span></td>
+						<td><span class="info-empleo"><?= date('Y-m-d H:i:s', strtotime($this->request->data['Empleo']['modified'])); ?></span></td>
 					</tr>
-					<tr>
-						<th><?= $this->Form->label('jornada_id', 'Jornada'); ?></th>
-						<td><?= $this->Form->input('jornada_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('tipo_contrato_id', 'Tipo contrato'); ?></th>
-						<td><?= $this->Form->input('tipo_contrato_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('comuna_id', 'Comuna'); ?></th>
-						<td><?= $this->Form->input('comuna_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('estado_empleo_id', 'Estado empleo'); ?></th>
-						<td><?= $this->Form->input('estado_empleo_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('experiencia_id', 'Experiencia'); ?></th>
-						<td><?= $this->Form->input('experiencia_id', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('titulo', 'Titulo'); ?></th>
-						<td><?= $this->Form->input('titulo'); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('nombre_corto', 'Nombre corto'); ?></th>
-						<td><?= $this->Form->input('nombre_corto'); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('requisitos_minimos', 'Requisitos minimos'); ?></th>
-						<td><?= $this->Form->input('requisitos_minimos'); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('descripcion', 'Descripcion'); ?></th>
-						<td><?= $this->Form->input('descripcion'); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('sueldo', 'Sueldo'); ?></th>
-						<td><?= $this->Form->input('sueldo', array('class' => 'form-control select')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('comentarios_sueldo', 'Comentarios sueldo'); ?></th>
-						<td><?= $this->Form->input('comentarios_sueldo'); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('vacantes', 'Vacantes'); ?></th>
-						<td><?= $this->Form->input('vacantes'); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('fecha_finaliza', 'Fecha finaliza'); ?></th>
-						<td><?= $this->Form->input('fecha_finaliza'); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('cerrar_empleo', 'Cerrar empleo'); ?></th>
-						<td><?= $this->Form->input('cerrar_empleo', array('class' => 'icheckbox')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('activo', 'Activo'); ?></th>
-						<td><?= $this->Form->input('activo', array('class' => 'icheckbox')); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('cerrada', 'Cerrada'); ?></th>
-						<td><?= $this->Form->input('cerrada'); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('Categoria', 'Categoria'); ?></th>
-						<td><?= $this->Form->input('Categoria'); ?></td>
-					</tr>
-				</table>
-
-				<div class="pull-right">
-					<input type="submit" class="btn btn-primary esperar-carga" autocomplete="off" data-loading-text="Espera un momento..." value="Guardar cambios">
-					<?= $this->Html->link('Cancelar', array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
-				</div>
-			<?= $this->Form->end(); ?>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
+<?= $this->Form->create('Empleo', array('class' => 'form-horizontal', 'type' => 'file', 'inputDefaults' => array('label' => false, 'div' => false, 'class' => 'form-control'))); ?>
+<?= $this->Form->input('id'); ?>
+<div class="page-content-wrap">
+	<div class="row">
+		<div class="col-xs-12">
+			<h3 class="titulo-panel">Título</h3>
+			<?= $this->Form->input('titulo', array('class' => 'form-control input-grande', 'placeholder' => 'Título de la oferta')); ?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<h3 class="titulo-panel">Descripción</h3>
+			<?= $this->Form->input('descripcion', array('class' => 'form-control textarea-grande summernote' , 'placeholder' => 'Descripción de la oferta')); ?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<h3 class="titulo-panel">Detalles del empleo</h3>
+		</div>
+		<div class="col-md-12 col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-4 col-xs-12 form-group">
+							<?= $this->Form->label('jornada_laboral_id', 'Jornada Laboral'); ?>
+						</div>
+						<div class="col-sm-8 col-xs-12 form-group">
+							<?= $this->Form->input('jornada_laboral_id', array('class' => 'form-control select')); ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 col-xs-12 form-group">
+							<?= $this->Form->label('contrato_ofrecido_id', 'Tipo contrato'); ?>
+						</div>
+						<div class="col-sm-8 col-xs-12 form-group">
+							<?= $this->Form->input('contrato_ofrecido_id', array('class' => 'form-control select')); ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 col-xs-12 form-group">
+							<?= $this->Form->label('vacantes', 'Vacantes'); ?>
+						</div>
+						<div class="col-sm-8 col-xs-12 form-group">
+							<?= $this->Form->input('vacantes', array('class' => 'spinner_default form-control', 'type' => 'text', 'value' => '1')); ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 col-xs-12 form-group">
+							<?= $this->Form->label('sueldo', 'Sueldo ofrecido (CPL)'); ?>
+						</div>
+						<div class="col-sm-6 col-xs-10 form-group">
+							<?= $this->Form->input('sueldo'); ?>
+						</div>
+						<div class="col-sm-2 col-xs-2 form-group">
+							<small>* Opcional</small>
+						</div>
+					</div>
+					<div class="row hide">
+						<div class="col-sm-4 col-xs-12 form-group">
+							<?= $this->Form->label('comentarios_sueldo', 'Comentarios sueldo'); ?>
+						</div>
+						<div class="col-sm-6 col-xs-10 form-group">
+							<?= $this->Form->input('comentarios_sueldo', array('class' => 'form-control',)); ?>
+						</div>
+						<div class="col-sm-2 col-xs-2 form-group">
+							<small>* Opcional</small>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 col-xs-12 form-group">
+							<?= $this->Form->label('fecha_finaliza', 'Fecha y hora de cierre'); ?>
+						</div>
+						<div class="col-sm-4 col-xs-12 form-group">
+							<div class="input-group">
+								<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+									<?=$this->Form->input(
+										'fecha_finaliza', array(
+											'type' => 'text',
+											'class' => 'form-control datepicker',
+											'placeholder' => 'Seleccione fecha final',
+											'data-clear' => 'true'
+										)
+									); ?>
+							</div>
+						</div>
+						<div class="col-sm-4 col-xs-12 form-group">
+							<div class="input-group">
+								<span class="input-group-addon add-on"><span class="glyphicon glyphicon-time"></span></span>
+								<?=$this->Form->input(
+									'hora_finaliza', array(
+										'type' => 'text',
+										'class' => 'form-control timepicker24',
+										'placeholder' => 'Seleccione fecha final',
+										'data-clear' => 'true'
+									)
+								); ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h3  class="titulo-panel">Requisitos mínimos</h3>
+		</div>
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-4 col-xs-12 form-group">
+							<?= $this->Form->label('anno_experiencia_id', 'Experiencia mínima'); ?>
+						</div>
+						<div class="col-sm-8 col-xs-12 form-group">
+							<?= $this->Form->input('anno_experiencia_id', array('class' => 'form-control select')); ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 col-xs-12 form-group">
+							<?= $this->Form->label('requisitos_minimos', 'Requisitos mínimos'); ?>
+						</div>
+						<div class="col-sm-8 col-xs-12 form-group">
+							<?= $this->Form->input('requisitos_minimos', array('class' => 'summernote')); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h3  class="titulo-panel">Ubicación del empleo</h3>
+		</div>
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-4 col-xs-12 form-group">
+							<?= $this->Form->label('comuna_id', 'Ubicación del trabajo'); ?>
+						</div>
+						<div class="col-sm-8 col-xs-12 form-group">
+							<?= $this->Form->input('comuna_id', array('class' => 'form-control select', 'data-live-search' => true)); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h3 class="titulo-panel">Categorías</h3>
+		</div>
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+				<? foreach($categoriasPadres as $categoriaPadre) : ?>
+					<div class="row underline">
+						<div class="col-sm-4 col-xs-12 form-group">
+							<?=$categoriaPadre['Categoria']['nombre'];?>
+						</div>
+						<div class="col-sm-8 col-xs-12 form-group">
+							<?=$this->Form->select('Categoria', $categoriaPadre['Categoria']['CategoriaHijas'], array(
+							'class' => 'form-control select', 
+							'data-live-search' => true, 
+							'empty' => sprintf('Seleccione %s', $categoriaPadre['Categoria']['nombre']), 
+							'multiple' => 'multiple'));?>
+						</div>
+					</div>
+				<? endforeach; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="pull-right">
+				<input type="submit" class="btn btn-primary esperar-carga" autocomplete="off" data-loading-text="Espera un momento..." value="Guardar cambios">
+				<?= $this->Html->link('Cancelar', array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+			</div>
+		</div>
+	</div>
+</div>
+<?= $this->Form->end(); ?>

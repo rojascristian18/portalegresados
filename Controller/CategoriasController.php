@@ -14,7 +14,10 @@ class CategoriasController extends AppController
 	public function admin_add()
 	{
 		if ( $this->request->is('post') )
-		{
+		{	
+			// Shortname
+			$this->request->data['Categoria']['nombre_corto'] 	= strtolower(Inflector::slug($this->request->data['Categoria']['nombre']));
+
 			$this->Categoria->create();
 			if ( $this->Categoria->save($this->request->data) )
 			{
@@ -26,7 +29,7 @@ class CategoriasController extends AppController
 				$this->Session->setFlash('Error al guardar el registro. Por favor intenta nuevamente.', null, array(), 'danger');
 			}
 		}
-		$parentCategorias	= $this->Categoria->ParentCategoria->find('list');
+		$parentCategorias	= $this->Categoria->ParentCategoria->find('list', array('conditions' => array('parent_id' => null)));
 		$empleos	= $this->Categoria->Empleo->find('list');
 		$usuarios	= $this->Categoria->Usuario->find('list');
 		$this->set(compact('parentCategorias', 'empleos', 'usuarios'));
@@ -35,7 +38,10 @@ class CategoriasController extends AppController
 	public function admin_edit($id = null)
 	{
 		if ( ! $this->Categoria->exists($id) )
-		{
+		{	
+			// Shortname
+			$this->request->data['Categoria']['nombre_corto'] 	= strtolower(Inflector::slug($this->request->data['Categoria']['nombre']));
+
 			$this->Session->setFlash('Registro inválido.', null, array(), 'danger');
 			$this->redirect(array('action' => 'index'));
 		}

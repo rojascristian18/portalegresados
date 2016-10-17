@@ -12,15 +12,11 @@
 				<table class="table">
 					<tr>
 						<th><?= $this->Form->label('parent_id', 'Categoria padre'); ?></th>
-						<td><?= $this->Form->input('parent_id', array('class' => 'form-control select')); ?></td>
+						<td><?= $this->Form->select('parent_id', $parentCategorias,array('class' => 'form-control select', 'empty' => 'Sin categoría padre')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('nombre', 'Nombre'); ?></th>
 						<td><?= $this->Form->input('nombre'); ?></td>
-					</tr>
-					<tr>
-						<th><?= $this->Form->label('nombre_corto', 'Nombre corto'); ?></th>
-						<td><?= $this->Form->input('nombre_corto'); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('activo', 'Activo'); ?></th>

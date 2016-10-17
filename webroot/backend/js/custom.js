@@ -165,8 +165,109 @@ jQuery(document).ready(function($)
     if($(".timepicker24").length > 0) {
         $(".timepicker24").timepicker({minuteStep: 5,showSeconds: true,showMeridian: false});
     }
-	
-	
+
+    if($(".summernote").length > 0){
+        $(".summernote").summernote({height: 250,
+             codemirror: {
+                mode: 'text/html',
+                htmlMode: true,
+                lineNumbers: true,
+                theme: 'default'
+              }
+        });
+        
+        /**
+        * Quitar opciones del editor
+        */ 
+    	$(".note-editor").find('.note-style').remove();
+        $(".note-editor").find('.note-fontname').remove();
+        $(".note-editor").find('.note-color').remove();
+        $(".note-editor").find('.note-height').remove();
+        $(".note-editor").find('.note-table').remove();
+        $(".note-editor").find('.note-insert').remove();
+        $(".note-editor").find('.note-view').remove();
+        $(".note-editor").find('.note-help').remove();
+        $('.note-editor').find('.note-font').remove();
+        $(".note-editor").find('.note-para').find('.btn').eq(2).remove();
+        
+    }
+
+    if($("form[id^='validate']").length > 0){
+        // Validation prefix for custom form elements
+        var prefix = "valPref_";
+
+        //Add prefix to Bootstrap select plugin
+        $("form[id^='validate'] .select").each(function(){
+           $(this).next("div.bootstrap-select").attr("id", prefix + $(this).attr("id")).removeClass("validate[required]");
+        });
+
+        // Validation Engine init
+        $("form[id^='validate']").validationEngine('attach', {promptPosition : "bottomLeft", scroll: false});
+    }
+
+    // Agregar empleo
+    if ( $('#EmpleoJobAddForm').length > 0 ) {
+    	$("#EmpleoJobAddForm").validate({
+            ignore: [],
+            rules: {                                            
+                    'data[Empleo][titulo]': {
+                            required: true,
+                            minlength: 10
+                    },
+                    'data[Empleo][descripcion]': {
+                            required: true
+                    },
+                    'name="data[Empleo][jornada_laboral_id]"': {
+                            required: true
+                    },
+                    'data[Empleo][contrato_ofrecido_id]': {
+                            required: true
+                    },
+                    'data[Empleo][vacantes]': {
+                            required: true,
+                            number: true
+                    },
+                    'data[Empleo][anno_experiencia_id]': {
+                            required: true
+                    },
+                    'data[Empleo][requisitos_minimos]': {
+                            required: true
+                    },
+                    'data[Empleo][sueldo]': {
+                    		number: true
+                    },
+                    'data[Empleo][comuna_id]': {
+                            required: true
+                    }
+                }                                        
+            });
+    }
+
+    // Spinner
+    if( $('.spinner_default').length > 0 ) {
+    	$(".spinner_default").spinner()
+    	$(".spinner_decimal").spinner({step: 0.01, numberFormat: "n"});
+    }
+
+
+    //Comentarios del sueldo
+    if( $('#EmpleoSueldo').length > 0 ) {
+    	$('#EmpleoSueldo').on('focusout', function(){
+
+    		if ( $('#EmpleoSueldo').val() > 0 ) {
+    			if ( $('#EmpleoSueldo').hasClass('valid') ) {
+    				$('#EmpleoComentariosSueldo').parents('.row').eq(0).removeClass('hide')
+    			}
+
+    			if ( $('#EmpleoSueldo').hasClass('error') ) {
+    				$('#EmpleoComentariosSueldo').parents('.row').eq(0).addClass('hide')
+    			}
+   
+    		}else{
+    			$('#EmpleoComentariosSueldo').parents('.row').eq(0).addClass('hide')
+    		}
+    	});
+    }
 
 	/**
 	 * Funcion que permite obtener en formato YYYY-MM-DD una fecha determinada

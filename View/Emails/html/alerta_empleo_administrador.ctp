@@ -8,10 +8,10 @@
 				<tr style="height: 10px">
 					<td style="border-top: medium none; border-right: medium none; width: 100%; vertical-align: top; border-bottom: medium none; padding-bottom: 35px; text-align: center; padding-top: 35px; padding-left: 15px; border-left: medium none; padding-right: 15px; background-color: #feffff">
 						<p style="margin-bottom: 1em; font-size: 18px; font-family: arial, helvetica, sans-serif; color: #0A82AD; margin-top: 0px; line-height: 155%; background-color: transparent; mso-line-height-rule: exactly" align=center>
-							<strong>Nueva oferta de empleo recibida</strong>
+							<strong><?=$alerta['titulo_admin'];?></strong>
 						</p>
 						<p style="margin-bottom: 1em; font-size: 12px; font-family: arial, helvetica, sans-serif; color: #a7a7a7; margin-top: 0px; line-height: 155%; background-color: transparent; mso-line-height-rule: exactly" align=center>
-							Un nuevo empleo publicado por <?=$alerta['Empresa']['nombre'];?> necesita de su aprobación.
+							<?=$alerta['cuerpo_admin'];?>
 						</p>
 						<ul style="margin-bottom: 1em; font-size: 12px; font-family: arial, helvetica, sans-serif; color: #a7a7a7; padding-left: 20px; margin-top: 0px; line-height: 155%; background-color: transparent; mso-line-height-rule: exactly" align="center">
 							<? 	if ( ! empty($alerta['Empresa']['nombre']) ) : ?>
@@ -42,7 +42,8 @@
 						<?=$this->html->link('Gestionar oferta', array(
 							'controller' => 'empleos', 
 							'action' => 'view', 
-							'admin' => true, 
+							'admin' => true,
+							'full_base' => true, 
 							$alerta['Empleo']['id']), array(
 							'style' => 'background-color:#43AB86; font-size: 14px; font-family: arial, helvetica, sans-serif; color: #ffffff; padding: 5px 15px; text-decoration: none;'
 							)

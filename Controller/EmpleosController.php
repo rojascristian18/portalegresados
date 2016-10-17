@@ -161,6 +161,9 @@ class EmpleosController extends AppController
 		$this->paginate		= array(
 			'recursive'			=> 0
 		);
+
+		BreadcrumbComponent::add('Mis ofertas ');
+
 		$empleos	= $this->paginate();
 		$this->set(compact('empleos'));
 	}
@@ -169,15 +172,22 @@ class EmpleosController extends AppController
 	{
 		if ( $this->request->is('post') )
 		{	
-
 			// Shortname
 			$this->request->data['Empleo']['nombre_corto'] 	= strtolower(Inflector::slug($this->request->data['Empleo']['titulo']));
 			
 			// Forzar estado del empleo en "Pendiente"
 			$this->request->data['Empleo']['estado_empleo_id'] = 1;
 
+			// Forzar id empresa
+			$this->request->data['Empleo']['empresa_id'] = $this->Auth->user('id');
+			
+
+			// Categorias
+			$this->request->data['Categoria'] = $this->request->data['Categoria']['Categoria'];
+
+
 			$this->Empleo->create();
-			if ( $this->Empleo->save($this->request->data) )
+			if ( $this->Empleo->saveAll($this->request->data) )
 			{
 				$this->Session->setFlash('Registro agregado correctamente.', null, array(), 'success');
 				$this->redirect(array('action' => 'index'));
@@ -187,6 +197,10 @@ class EmpleosController extends AppController
 				$this->Session->setFlash('Error al guardar el registro. Por favor intenta nuevamente.', null, array(), 'danger');
 			}
 		}
+
+		// Camino de migas
+		BreadcrumbComponent::add('Mis ofertas ', array('action' => 'index'));
+		BreadcrumbComponent::add('Crear oferta ');
 		
 		$empresas			= $this->Empleo->Empresa->find('list', array('conditions' => array('Empresa.activo' => 1)));
 		$comunas			= $this->Empleo->Comuna->find('list');
@@ -194,8 +208,22 @@ class EmpleosController extends AppController
 		$jornadaLaborales	= $this->Empleo->JornadaLaboral->find('list', array('conditions' => array('JornadaLaboral.activo' => 1)));
 		$contratoOfrecidos  = $this->Empleo->ContratoOfrecido->find('list', array('conditions' => array('ContratoOfrecido.activo' => 1)));
 		$annoExperiencias  	= $this->Empleo->AnnoExperiencia->find('list', array('conditions' => array('AnnoExperiencia.activo' => 1)));
-		$categorias			= $this->Empleo->Categoria->find('list', array('conditions' => array('Categoria.activo' => 1)));
-		$this->set(compact('empresas', 'comunas', 'estadoEmpleos', 'jornadaLaborales', 'contratoOfrecidos', 'annoExperiencias', 'categorias'));
+		$categoriasPadres   = $this->Empleo->Categoria->find('all', array(
+				'conditions' => array(
+					'Categoria.activo' => 1,
+					'Categoria.parent_id' => null
+				),
+				'fields' => array('Categoria.id', 'Categoria.nombre')
+			)
+		);
+
+		foreach ($categoriasPadres as $indice => $categoriaPadre) {
+			$categoriasPadres[$indice]['Categoria']['CategoriaHijas'] = $this->Empleo->Categoria->find('list', array('conditions' => array('Categoria.parent_id' => $categoriaPadre['Categoria']['id'])));
+		}
+
+		
+
+		$this->set(compact('empresas', 'comunas', 'estadoEmpleos', 'jornadaLaborales', 'contratoOfrecidos', 'annoExperiencias', 'categoriasPadres'));
 	}
 
 	public function job_edit($id = null)
@@ -211,7 +239,25 @@ class EmpleosController extends AppController
 			// Shortname
 			$this->request->data['Empleo']['nombre_corto'] 	= strtolower(Inflector::slug($this->request->data['Empleo']['titulo']));
 
-			if ( $this->Empleo->save($this->request->data) )
+
+			// Eliminar relaciones y volver a insertar
+			$this->Empleo->Categoria->CategoriasEmpleo->deleteAll(
+				array(
+					'CategoriasEmpleo.empleo_id' => $id,
+				)
+           	);
+
+           	// Forzar estado del empleo en "Editado en revisión"
+			$this->request->data['Empleo']['estado_empleo_id'] = 4;
+
+			// Forzar id empresa
+			$this->request->data['Empleo']['empresa_id'] = $this->Auth->user('id');
+
+			// Actualizar contador de ediciones
+			$valorEditadoActual = $this->request->data['Empleo']['editado_count'];
+			$this->request->data['Empleo']['editado_count'] = ($valorEditadoActual - 1);
+
+			if ( $this->Empleo->saveAll($this->request->data) )
 			{
 				$this->Session->setFlash('Registro editado correctamente', null, array(), 'success');
 				$this->redirect(array('action' => 'index'));
@@ -224,14 +270,36 @@ class EmpleosController extends AppController
 		else
 		{
 			$this->request->data	= $this->Empleo->find('first', array(
-				'conditions'	=> array('Empleo.id' => $id)
+				'conditions'	=> array('Empleo.id' => $id),
+				'contain'		=> array('Categoria')
 			));
+
 		}
-		$empresas	= $this->Empleo->Empresa->find('list');
-		$comunas	= $this->Empleo->Comuna->find('list');
-		$estadoEmpleos	= $this->Empleo->EstadoEmpleo->find('list');
-		$categorias	= $this->Empleo->Categoria->find('list');
-		$this->set(compact('empresas', 'comunas', 'estadoEmpleos', 'categorias'));
+
+		// Camino de migas
+		BreadcrumbComponent::add('Mis ofertas ', array('action' => 'index'));
+		BreadcrumbComponent::add('Editar oferta ');
+		
+		$empresas			= $this->Empleo->Empresa->find('list', array('conditions' => array('Empresa.activo' => 1)));
+		$comunas			= $this->Empleo->Comuna->find('list');
+		$estadoEmpleos		= $this->Empleo->EstadoEmpleo->find('list', array('conditions' => array('EstadoEmpleo.activo' => 1)));
+		$jornadaLaborales	= $this->Empleo->JornadaLaboral->find('list', array('conditions' => array('JornadaLaboral.activo' => 1)));
+		$contratoOfrecidos  = $this->Empleo->ContratoOfrecido->find('list', array('conditions' => array('ContratoOfrecido.activo' => 1)));
+		$annoExperiencias  	= $this->Empleo->AnnoExperiencia->find('list', array('conditions' => array('AnnoExperiencia.activo' => 1)));
+		$categoriasPadres   = $this->Empleo->Categoria->find('all', array(
+				'conditions' => array(
+					'Categoria.activo' => 1,
+					'Categoria.parent_id' => null
+				),
+				'fields' => array('Categoria.id', 'Categoria.nombre')
+			)
+		);
+
+		foreach ($categoriasPadres as $indice => $categoriaPadre) {
+			$categoriasPadres[$indice]['Categoria']['CategoriaHijas'] = $this->Empleo->Categoria->find('list', array('conditions' => array('Categoria.parent_id' => $categoriaPadre['Categoria']['id'])));
+		}
+
+		$this->set(compact('empresas', 'comunas', 'estadoEmpleos', 'jornadaLaborales', 'contratoOfrecidos', 'annoExperiencias', 'categoriasPadres'));
 	}
 
 	public function job_delete($id = null)
