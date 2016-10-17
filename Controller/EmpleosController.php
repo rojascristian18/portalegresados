@@ -255,6 +255,7 @@ class EmpleosController extends AppController
 
 			// Actualizar contador de ediciones
 			$valorEditadoActual = $this->request->data['Empleo']['editado_count'];
+			
 			$this->request->data['Empleo']['editado_count'] = ($valorEditadoActual - 1);
 
 			if ( $this->Empleo->saveAll($this->request->data) )

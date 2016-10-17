@@ -24,10 +24,10 @@
 								<tr class="sort">
 									<th><?= $this->Paginator->sort('titulo', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
 									<th><?= $this->Paginator->sort('jornada_laboral_id', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
-									<th><?= $this->Paginator->sort('contrato_ofrecido_id', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
 									<th><?= $this->Paginator->sort('comuna_id', 'Lugar de trabajo', array('title' => 'Haz click para ordenar por este criterio')); ?></th>
 									<th><?= $this->Paginator->sort('vacantes', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
 									<th><?= $this->Paginator->sort('estado_empleo_id', 'Estado del empleo', array('title' => 'Haz click para ordenar por este criterio')); ?></th>
+									<th><?= $this->Paginator->sort('editado_count', 'Ediciones disponibles', array('title' => 'Haz click para ordenar por este criterio')); ?></th>
 									<th>Acciones</th>
 								</tr>
 							</thead>
@@ -36,7 +36,6 @@
 								<tr>
 									<td><?= $this->Text->excerpt(h($empleo['Empleo']['titulo']), 'method', 15, '...');; ?>&nbsp;</td>
 									<td><?= h($empleo['JornadaLaboral']['nombre']); ?>&nbsp;</td>
-									<td><?= h($empleo['ContratoOfrecido']['nombre']); ?>&nbsp;</td>
 									<td><?= $this->Html->link($empleo['Comuna']['comuna'], array('controller' => 'comunas', 'action' => 'edit', $empleo['Comuna']['id'])); ?></td>
 									<td><?= h($empleo['Empleo']['vacantes']); ?>&nbsp;</td>
 									<td>
@@ -53,6 +52,7 @@
 										<span class="label label-default"><?=$empleo['EstadoEmpleo']['estado'];?></span>
 									<? } ?>
 									</td>
+									<td><?=$empleo['Empleo']['editado_count'];?></td>
 									<td>
 									<? if ($empleo['Empleo']['editado_count'] > 0 && $empleo['EstadoEmpleo']['id'] != 3) { ?>
 										<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $empleo['Empleo']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>

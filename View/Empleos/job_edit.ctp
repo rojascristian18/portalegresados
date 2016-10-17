@@ -26,6 +26,7 @@
 </div>
 <?= $this->Form->create('Empleo', array('class' => 'form-horizontal', 'type' => 'file', 'inputDefaults' => array('label' => false, 'div' => false, 'class' => 'form-control'))); ?>
 <?= $this->Form->input('id'); ?>
+<?= $this->Form->input('editado_count', array('type' => 'hidden')); ?>
 <div class="page-content-wrap">
 	<div class="row">
 		<div class="col-xs-12">
