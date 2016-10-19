@@ -100,9 +100,13 @@ class EmpresasController extends AppController
 
 	/**
 	* Métodos para Empresa
-	* Prefix => job
+	* Prefix => businesses
 	*/
-	public function job_login()
+
+	/**
+	* Métodos administrativos
+	*/
+	public function businesses_login()
 	{
 		if ( $this->request->is('post') )
 		{	
@@ -115,17 +119,18 @@ class EmpresasController extends AppController
 				$this->Session->setFlash('Nombre de usuario y/o clave incorrectos.', null, array(), 'danger');
 			}
 		}
+
 		$this->layout	= 'login';
+		
 	}
 
 
-	public function job_logout()
+	public function businesses_logout()
 	{
 		$this->redirect($this->Auth->logout());
 	}
 
-
-	public function job_index()
+	public function businesses_index()
 	{
 		$this->paginate		= array(
 			'recursive'			=> 0
@@ -134,13 +139,12 @@ class EmpresasController extends AppController
 		$empresas	= $this->paginate();
 
 		// Camino de migas
-		BreadcrumbComponent::add('Mi empresa ');
-       
+		BreadcrumbComponent::add('Dashboard ');     
 
 		$this->set(compact('empresas'));
 	}
 
-	public function job_add()
+	public function businesses_add()
 	{
 		if ( $this->request->is('post') )
 		{
@@ -162,38 +166,7 @@ class EmpresasController extends AppController
 		$this->set(compact('rubroEmpresas', 'comunas', 'empleados', 'preguntas'));
 	}
 
-
-	/**
-	* Registro de una nueva empresa
-	*/
-	public function registro()
-	{
-		if ( $this->request->is('post') )
-		{	
-
-			$this->Empresa->create();
-			if ( $this->Empresa->save($this->request->data) )
-			{
-				$this->Session->setFlash('Cuenta creada exitosamente.', null, array(), 'success');
-				$this->redirect(array('action' => 'job', 'job' => true));
-			}
-			else
-			{
-				$this->Session->setFlash('Error al guardar el registro. Por favor intenta nuevamente.', null, array(), 'danger');
-			}
-		}
-
-		$rubroEmpresas	= $this->Empresa->RubroEmpresa->find('list');
-		$comunas	= $this->Empresa->Comuna->find('list');
-		$empleados	= $this->Empresa->Empleado->find('list');
-		$preguntas	= $this->Empresa->Pregunta->find('list');
-
-		$this->layout	= 'registro_empresa';
-
-		$this->set(compact('rubroEmpresas', 'comunas', 'empleados', 'preguntas'));
-	}
-
-	public function job_edit($id = null)
+	public function businesses_edit($id = null)
 	{
 		if ( ! $this->Empresa->exists($id) )
 		{
@@ -202,7 +175,14 @@ class EmpresasController extends AppController
 		}
 
 		if ( $this->request->is('post') || $this->request->is('put') )
-		{
+		{ 	
+			
+			foreach ($this->request->data['Empresa'] as $ix => $val) {
+				if ( empty($val) ) {
+					unset($this->request->data['Empresa'][$ix]);
+				}
+			}
+
 			if ( $this->Empresa->save($this->request->data) )
 			{
 				$this->Session->setFlash('Registro editado correctamente', null, array(), 'success');
@@ -219,6 +199,10 @@ class EmpresasController extends AppController
 				'conditions'	=> array('Empresa.id' => $id)
 			));
 		}
+
+		// Camino de migas
+		BreadcrumbComponent::add('Mi empresa ');
+		
 		$rubroEmpresas	= $this->Empresa->RubroEmpresa->find('list');
 		$comunas	= $this->Empresa->Comuna->find('list');
 		$empleados	= $this->Empresa->Empleado->find('list');
@@ -226,7 +210,7 @@ class EmpresasController extends AppController
 		$this->set(compact('rubroEmpresas', 'comunas', 'empleados', 'preguntas'));
 	}
 
-	public function job_delete($id = null)
+	public function businesses_delete($id = null)
 	{
 		$this->Empresa->id = $id;
 		if ( ! $this->Empresa->exists() )
@@ -245,7 +229,7 @@ class EmpresasController extends AppController
 		$this->redirect(array('action' => 'index'));
 	}
 
-	public function job_exportar()
+	public function businesses_exportar()
 	{
 		$datos			= $this->Empresa->find('all', array(
 			'recursive'				=> -1
@@ -254,5 +238,113 @@ class EmpresasController extends AppController
 		$modelo			= $this->Empresa->alias;
 
 		$this->set(compact('datos', 'campos', 'modelo'));
+	}
+
+	/**
+	* Métodos públicos
+	*/
+
+	/**
+	* Registro de una nueva empresa
+	*/
+	public function businesses_registro()
+	{ 	
+		if ( $this->request->is('post') )
+		{	
+
+			$this->Empresa->create();
+			if ( $this->Empresa->save($this->request->data) )
+			{
+				$this->Session->setFlash('Cuenta creada exitosamente.', null, array(), 'success');
+				$this->redirect(array('action' => 'businesses', 'businesses' => true));
+			}
+			else
+			{
+				$this->Session->setFlash('Error al guardar el registro. Por favor intenta nuevamente.', null, array(), 'danger');
+			}
+		}
+
+		$rubroEmpresas	= $this->Empresa->RubroEmpresa->find('list');
+		$comunas	= $this->Empresa->Comuna->find('list');
+		$empleados	= $this->Empresa->Empleado->find('list');
+		$preguntas	= $this->Empresa->Pregunta->find('list');
+
+		// Layout para la vista publica
+		$this->layout = 'public';
+
+		$this->set(compact('rubroEmpresas', 'comunas', 'empleados', 'preguntas'));
+	}
+
+
+	/**
+	* Función que permite recuperar la contraseña 
+	* respondiendo la pregunta de seguridad. Si la respuesta es correcta se envía 
+	* la nueva clave al email dela empresa
+	* @param 	array()		GET		email 	Email de la empresa
+	* @param 	array() 	POST 	empresa Id empresa	
+	* @param 	array() 	POST 	respuesta 	Respuesta de la empresa a la pregunta secreta
+	* @return 	redirect
+	*/
+	public function businesses_recuperarclave() {
+
+		if ($this->request->is('post')) {
+			
+			$empresa = $this->Empresa->find('first', array('conditions' => array('Empresa.id' => $this->request->data['Empresa']['empresa'])));
+
+			// Comparación de las respuestas en minúscula
+			if ( strtolower($empresa['Empresa']['respuesta']) == strtolower($this->request->data['Empresa']['respuesta']) ) {
+
+				// Creamos una clave nueva para el usuario, Se envía al email del usuario en el Modelo.
+				$empresa['Empresa']['clave'] = mktime(date("H"), date("i"), date("s"), date("m")  , date("d"), date("Y"));
+
+				// BIT para decirle al modelo que debe enviar email con la nueva contraseña
+				$empresa['Empresa']['enviar_email'] = true;
+				// Contraseña no codificada.
+				$empresa['Empresa']['enviar_email_clave'] = $empresa['Empresa']['clave'];
+
+				// Se limpian valores vacios
+				foreach ($empresa['Empresa'] as $indice => $valor) {
+					if ( empty($valor) ) {
+						unset($empresa['Empresa'][$indice]);
+					}
+				}
+				
+				if ( $this->Empresa->save($empresa) ) {
+					$this->Session->setFlash('¡Éxito! Su nueva contraseña fue enviada a su email.', null, array(), 'success');
+					$this->redirect(array('action' => 'login', 'businesses' => true));
+				}else{
+					$this->Session->setFlash('Ocurrió un error inesperado. Por favor intente nuevamente.', null, array(), 'danger');
+					$this->redirect(array('action' => 'login', 'businesses' => true));
+				}
+			}
+
+			$this->Session->setFlash('La respuesta ingresada no es correcta. Por favor intente nuevamente.', null, array(), 'danger');
+			$this->redirect(array('action' => 'login', 'businesses' => true));
+
+		}
+		
+		if ($this->request->is('get')) {
+			$emailEmpresa = $this->request->query['email'];
+
+			$empresa = $this->Empresa->find('first', array(
+				'conditions' => array(
+					'Empresa.email' => $emailEmpresa
+				),
+				'contain' => array('Pregunta')
+			));
+
+			if ( empty($empresa) ) {
+				$this->Session->setFlash('No se encuentra el email en nuestros registros.', null, array(), 'danger');
+				$this->redirect(array('action' => 'login', 'businesses' => true));
+			}
+
+			$pregunta = $empresa['Pregunta']['pregunta'];
+
+			// Layout para la vista publica
+			$this->layout = 'public';
+
+			$this->set(compact('pregunta', 'empresa'));
+		}
+
 	}
 }

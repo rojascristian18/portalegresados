@@ -13,7 +13,7 @@ Configure::write('Exception', array(
 Configure::write('App.encoding', 'UTF-8');
 Configure::write('Config.language', 'spa');
 //Configure::write('App.baseUrl', env('SCRIPT_NAME'));
-Configure::write('Routing.prefixes', array('admin','job','student'));
+Configure::write('Routing.prefixes', array('admin','businesses','graduate'));
 Configure::write('Cache.disable', true);
 //Configure::write('Cache.check', true);
 //Configure::write('Cache.viewPrefix', 'prefix');

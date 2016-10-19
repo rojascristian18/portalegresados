@@ -5,7 +5,7 @@ class EmpleosController extends AppController
 	public function admin_index()
 	{
 		$this->paginate		= array(
-			'recursive'			=> 0
+			'recursive'			=> 0,
 		);
 		$empleos	= $this->paginate();
 
@@ -156,10 +156,13 @@ class EmpleosController extends AppController
 	/************************************************************************************************************
 	* Métodos para empresas
 	*/
-	public function job_index()
+	public function businesses_index()
 	{
 		$this->paginate		= array(
-			'recursive'			=> 0
+			'recursive'			=> 0,
+			'conditions'	=> array(
+				'Empleo.empresa_id' => $this->Auth->user('id')
+			)
 		);
 
 		BreadcrumbComponent::add('Mis ofertas ');
@@ -168,7 +171,7 @@ class EmpleosController extends AppController
 		$this->set(compact('empleos'));
 	}
 
-	public function job_add()
+	public function businesses_add()
 	{
 		if ( $this->request->is('post') )
 		{	
@@ -181,15 +184,20 @@ class EmpleosController extends AppController
 			// Forzar id empresa
 			$this->request->data['Empleo']['empresa_id'] = $this->Auth->user('id');
 			
-
 			// Categorias
 			$this->request->data['Categoria'] = $this->request->data['Categoria']['Categoria'];
+
+
+			/*
+			* Iniciamos la cantidad de edicones disponibles del empleo definido por el administrador
+			*/
+			$this->request->data['Empleo']['editado_count'] = $this->obtenerCantidadEdiciones();
 
 
 			$this->Empleo->create();
 			if ( $this->Empleo->saveAll($this->request->data) )
 			{
-				$this->Session->setFlash('Registro agregado correctamente.', null, array(), 'success');
+				$this->Session->setFlash('La oferta de empleo se creó correctamente.', null, array(), 'success');
 				$this->redirect(array('action' => 'index'));
 			}
 			else
@@ -226,7 +234,7 @@ class EmpleosController extends AppController
 		$this->set(compact('empresas', 'comunas', 'estadoEmpleos', 'jornadaLaborales', 'contratoOfrecidos', 'annoExperiencias', 'categoriasPadres'));
 	}
 
-	public function job_edit($id = null)
+	public function businesses_edit($id = null)
 	{
 		if ( ! $this->Empleo->exists($id) )
 		{
@@ -236,6 +244,15 @@ class EmpleosController extends AppController
 
 		if ( $this->request->is('post') || $this->request->is('put') )
 		{	
+			
+			/**
+			* Verificamos si tiene ediciones diponibles
+			*/
+			if ( $this->request->data['Empleo']['editado_count'] == 0 ) {
+				$this->Session->setFlash('No tiene ediciones disponibles para este empleo.', null, array(), 'danger');
+				$this->redirect(array('action' => 'index'));
+			}
+
 			// Shortname
 			$this->request->data['Empleo']['nombre_corto'] 	= strtolower(Inflector::slug($this->request->data['Empleo']['titulo']));
 
@@ -253,9 +270,10 @@ class EmpleosController extends AppController
 			// Forzar id empresa
 			$this->request->data['Empleo']['empresa_id'] = $this->Auth->user('id');
 
-			// Actualizar contador de ediciones
+			/**
+			* Actualizar contador de ediciones restandole 1
+			*/
 			$valorEditadoActual = $this->request->data['Empleo']['editado_count'];
-			
 			$this->request->data['Empleo']['editado_count'] = ($valorEditadoActual - 1);
 
 			if ( $this->Empleo->saveAll($this->request->data) )
@@ -265,7 +283,7 @@ class EmpleosController extends AppController
 			}
 			else
 			{
-				$this->Session->setFlash('Error al guardar el registro. Por favor intenta nuevamente.', null, array(), 'danger');
+				$this->Session->setFlash('Error al guardar el empleo. Por favor intenta nuevamente.', null, array(), 'danger');
 			}
 		}
 		else
@@ -274,6 +292,14 @@ class EmpleosController extends AppController
 				'conditions'	=> array('Empleo.id' => $id),
 				'contain'		=> array('Categoria')
 			));
+
+			/**
+			* Verificamos si tiene ediciones diponibles
+			*/
+			if ( $this->request->data['Empleo']['editado_count'] == 0 ) {
+				$this->Session->setFlash('No tiene ediciones disponibles para este empleo.', null, array(), 'danger');
+				$this->redirect(array('action' => 'index'));
+			}
 
 		}
 
@@ -303,7 +329,7 @@ class EmpleosController extends AppController
 		$this->set(compact('empresas', 'comunas', 'estadoEmpleos', 'jornadaLaborales', 'contratoOfrecidos', 'annoExperiencias', 'categoriasPadres'));
 	}
 
-	public function job_delete($id = null)
+	public function businesses_delete($id = null)
 	{
 		$this->Empleo->id = $id;
 		if ( ! $this->Empleo->exists() )
@@ -322,7 +348,7 @@ class EmpleosController extends AppController
 		$this->redirect(array('action' => 'index'));
 	}
 
-	public function job_exportar()
+	public function businesses_exportar()
 	{
 		$datos			= $this->Empleo->find('all', array(
 			'recursive'				=> -1

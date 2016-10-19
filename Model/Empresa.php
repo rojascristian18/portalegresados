@@ -23,6 +23,12 @@ class Empresa extends AppModel
 							'width'		=> 100,
 							'height'	=> 100,
 							'crop'		=> true
+						),
+						array(
+							'prefix'	=> 'xs_mini',
+							'width'		=> 50,
+							'height'	=> 50,
+							'crop'		=> true
 						)
 					)
 				)
@@ -143,17 +149,7 @@ class Empresa extends AppModel
 				//'required'		=> false,
 				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
 			),
-		),
-		'activo' => array(
-			'numeric' => array(
-				'rule'			=> array('numeric'),
-				'last'			=> true,
-				//'message'		=> 'Mensaje de validación personalizado',
-				//'allowEmpty'	=> true,
-				//'required'		=> false,
-				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
-			),
-		),
+		)
 	);
 
 	/**
@@ -230,6 +226,32 @@ class Empresa extends AppModel
 				$this->data[$this->alias]['clave']	= AuthComponent::password($this->data[$this->alias]['clave']);
 			}
 		}
+
+		if ( isset($this->data[$this->alias]['clave_nueva']) && ! empty($this->data[$this->alias]['clave_nueva']) )
+		{	
+			if ( isset($this->data[$this->alias]['repetir_clave_nueva']) && ! empty($this->data[$this->alias]['repetir_clave_nueva']) ) {
+				if ( trim($this->data[$this->alias]['clave_nueva']) == false )
+				{
+					unset($this->data[$this->alias]['clave_nueva'], $this->data[$this->alias]['repetir_clave_nueva']);
+				}
+				else
+				{
+					$this->data[$this->alias]['clave']	= AuthComponent::password($this->data[$this->alias]['clave_nueva']);
+					unset($this->data[$this->alias]['clave_nueva'], $this->data[$this->alias]['repetir_clave_nueva']);
+				}	
+			}
+		}
+
 		return true;
+	}
+
+	public function afterSave($created = true, $options = array()) {
+		parent::afterSave($created, $options);
+
+		if ( ! empty($this->data['Empresa']) && isset($this->data['Empresa']['enviar_email']) && $this->data['Empresa']['enviar_email'] == true) {
+
+			$evento			= new CakeEvent('Model.Empresa.afterSave', $this, $this->data);
+			$this->getEventManager()->dispatch($evento);
+		}
 	}
 }

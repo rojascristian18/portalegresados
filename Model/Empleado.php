@@ -47,4 +47,21 @@ class Empleado extends AppModel
 			),
 		),
 	);
+
+
+	public $hasMany = array(
+		'Empresa' => array(
+			'className'				=> 'Empresa',
+			'foreignKey'			=> 'empleado_id',
+			'dependent'				=> false,
+			'conditions'			=> '',
+			'fields'				=> '',
+			'order'					=> '',
+			'limit'					=> '',
+			'offset'				=> '',
+			'exclusive'				=> '',
+			'finderQuery'			=> '',
+			'counterQuery'			=> ''
+		)
+	);
 }

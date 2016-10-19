@@ -4,12 +4,13 @@ Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home
 Router::connect('/admin', array('controller' => 'administradores', 'action' => 'index', 'admin' => true));
 Router::connect('/admin/login', array('controller' => 'administradores', 'action' => 'login', 'admin' => true));
 
-Router::connect('/job', array('controller' => 'empresas', 'action' => 'index', 'job' => true));
-Router::connect('/job/registro', array('controller' => 'empresas', 'action' => 'registro', 'job' => true));
-Router::connect('/job/login', array('controller' => 'empresas', 'action' => 'login', 'job' => true));
+Router::connect('/businesses', array('controller' => 'empresas', 'action' => 'index', 'businesses' => true));
+Router::connect('/businesses/registro', array('controller' => 'empresas', 'action' => 'registro', 'businesses' => true));
+Router::connect('/businesses/recuperarclave', array('controller' => 'empresas', 'action' => 'recuperarclave', 'businesses' => true));
+Router::connect('/businesses/login', array('controller' => 'empresas', 'action' => 'login', 'businesses' => true));
 
-Router::connect('/student', array('controller' => 'usuarios', 'action' => 'index', 'student' => true));
-Router::connect('/student/login', array('controller' => 'usarios', 'action' => 'login', 'student' => true));
+Router::connect('/graduate', array('controller' => 'usuarios', 'action' => 'index', 'graduate' => true));
+Router::connect('/graduate/login', array('controller' => 'usarios', 'action' => 'login', 'graduate' => true));
 
 Router::connect('/seccion/*', array('controller' => 'pages', 'action' => 'display'));
 

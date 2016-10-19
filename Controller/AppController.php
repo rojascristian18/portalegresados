@@ -56,17 +56,22 @@ class AppController extends Controller
 		/**
 		* Layout empresas
 		*/
-		if ( ! empty($this->request->params['job']) ) {
-			$this->layoutPath				= 'backend';
+		if ( ! empty($this->request->params['businesses']) ) {
+
+			$this->layoutPath				= 'businesses-backend';
+
 			AuthComponent::$sessionKey		= 'Auth.Empresa';
 			// Login action config
 			$this->Auth->loginAction['controller'] 	= 'empresas';
 			$this->Auth->loginAction['action'] 		= 'login';
-			$this->Auth->loginAction['job'] 		= true;
+			$this->Auth->loginAction['businesses'] 		= true;
 
 			// Login redirect and logout redirect
-			$this->Auth->loginRedirect = '/job';
-			$this->Auth->logoutRedirect = '/job';
+			$this->Auth->loginRedirect = '/businesses';
+			$this->Auth->logoutRedirect = '/businesses';
+
+			// Permitir a usuario no logeado ingresar a los métodos
+			$this->Auth->allow('businesses_registro', 'businesses_recuperarclave');
 
 			// Login Form config
 			$this->Auth->authenticate['Form']['userModel']		= 'Empresa';
@@ -77,18 +82,19 @@ class AppController extends Controller
 		/**
 		* Layout exalumnos
 		*/
-		if ( ! empty($this->request->params['student']) ) {
-			$this->layoutPath				= 'backend';
+		if ( ! empty($this->request->params['graduate']) ) {
+
+			$this->layoutPath				= 'graduate-backend';
 			AuthComponent::$sessionKey		= 'Auth.Exalumno';
 
 			// Login action config
 			$this->Auth->loginAction['controller'] 	= 'usuarios';
 			$this->Auth->loginAction['action'] 		= 'login';
-			$this->Auth->loginAction['student'] 		= true;
+			$this->Auth->loginAction['graduate'] 		= true;
 
 			// Login redirect and logout redirect
-			$this->Auth->loginRedirect = '/student';
-			$this->Auth->logoutRedirect = '/student';
+			$this->Auth->loginRedirect = '/graduate';
+			$this->Auth->logoutRedirect = '/graduate';
 
 			// Login Form config
 			$this->Auth->authenticate['Form']['userModel']		= 'Usuario';
@@ -96,7 +102,7 @@ class AppController extends Controller
 			$this->Auth->authenticate['Form']['fields']['password'] = 'clave';
 		}
 
-		if( empty($this->request->params['student']) &&  empty($this->request->params['job']) && empty($this->request->params['admin']) ) {
+		if( empty($this->request->params['graduate']) &&  empty($this->request->params['businesses']) && empty($this->request->params['admin']) ) {
 			AuthComponent::$sessionKey		= 'Auth.Visitante';
 			$this->Auth->allow();
 		}
@@ -162,5 +168,26 @@ class AppController extends Controller
 		{
 			$this->set(compact('breadcrumbs'));
 		}
+	}
+
+
+	/**
+	* Función que permite conocer la cantidad de ediciones diponibles que tiene una oferta de empleo
+	* @param $id 	Bigint	Identificador del empleo
+	* @return $ediciones 	Int 	Cantidad de ediciones diponibles
+	*/
+	public function obtenerCantidadEdiciones () {
+
+		/**
+		* Cantidad de ediciones definidas en el sistema
+		*/
+		$configuracion = ClassRegistry::init('Configuracion')->find('first', array('fields' => array('ediciones')));
+
+		if ( ! empty($configuracion) ) {
+			return $configuracion['Configuracion']['ediciones'];
+		}
+
+		// Si no existe una configuración que defina la cantidad de ediciones, el sistema lo define con 2 ediciones
+		return 2;
 	}
 }
