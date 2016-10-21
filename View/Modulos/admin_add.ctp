@@ -12,19 +12,19 @@
 				<table class="table">
 					<tr>
 						<th><?= $this->Form->label('parent_id', 'Modulo padre'); ?></th>
-						<td><?= $this->Form->input('parent_id', array('class' => 'form-control select')); ?></td>
+						<td><?= $this->Form->select('parent_id', $parentModulos, array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
-						<th><?= $this->Form->label('modulo', 'Modulo'); ?></th>
+						<th><?= $this->Form->label('modulo', 'Nombre del módulo'); ?></th>
 						<td><?= $this->Form->input('modulo'); ?></td>
 					</tr>
 					<tr>
-						<th><?= $this->Form->label('icono', 'Icono'); ?></th>
+						<th><?= $this->Form->label('icono', 'Icono el módulo'); ?></th>
 						<td><?= $this->Form->input('icono'); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('url', 'URL'); ?></th>
-						<td><?= $this->Form->input('url'); ?></td>
+						<td><?= $this->Form->select('url',  $optionsUrl, array('empty' => 'Seleccione', 'class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('descripcion', 'Descripcion'); ?></th>
@@ -40,7 +40,7 @@
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('Perfil', 'Perfil'); ?></th>
-						<td><?= $this->Form->input('Perfil'); ?></td>
+						<td><?=$this->Form->input('Perfil', array('class' => 'form-control select', 'multiple' => 'multiple'));?></td>
 					</tr>
 				</table>
 

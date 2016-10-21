@@ -5,6 +5,7 @@ class Perfil extends AppModel
 	/**
 	 * CONFIGURACION DB
 	 */
+	public $displayField	= 'perfil';
 
 	/**
 	 * BEHAVIORS

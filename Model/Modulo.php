@@ -5,6 +5,7 @@ class Modulo extends AppModel
 	/**
 	 * CONFIGURACION DB
 	 */
+	public $displayField	= 'modulo';
 
 	/**
 	 * BEHAVIORS

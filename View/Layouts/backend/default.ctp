@@ -70,11 +70,11 @@
 	</head>
 	<body>
         <div class="page-container">
-			<?= $this->element('admin_menu_lateral'); ?>
+			<?= $this->element('admin/menu_lateral'); ?>
             <div class="page-content">
-                <?= $this->element('admin_menu_superior'); ?>
+                <?= $this->element('admin/menu_superior'); ?>
                 <?= $this->element('template/breadcrumbs');?>
-				<?= $this->element('admin_alertas'); ?>
+				<?= $this->element('admin/alertas'); ?>
 				<?= $this->fetch('content'); ?>
 			</div>
 		</div>

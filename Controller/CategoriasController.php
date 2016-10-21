@@ -11,6 +11,30 @@ class CategoriasController extends AppController
 		$this->set(compact('categorias'));
 	}
 
+	/**
+	* Función que muestra las categorías padres
+	*/
+	public function admin_categorias(){
+		$this->paginate		= array(
+			'recursive'			=> 0,
+			'conditions' =>	array('parent_id' => 0)
+		);
+		$categorias	= $this->paginate();
+		$this->set(compact('categorias'));
+	}
+
+	/**
+	* Función que muestra las categorías padres
+	*/
+	public function admin_subcategorias(){
+		$this->paginate		= array(
+			'recursive'			=> 0,
+			'conditions' =>	array('parent_id !=' => 0)
+		);
+		$categorias	= $this->paginate();
+		$this->set(compact('categorias'));
+	}
+
 	public function admin_add()
 	{
 		if ( $this->request->is('post') )

@@ -7,49 +7,50 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<?= $this->Html->meta('icon'); ?>
 		<?= $this->Html->css(array(
-			'/backend/css/theme-dark',
-			'/backend/css/icheck/skins/flat/red',
-			'/backend/css/custom',
+			'/businesses-backend/css/theme-dark',
+			'/businesses-backend/css/icheck/skins/flat/red',
+			'/businesses-backend/css/custom',
 			/*
-			'/backend/css/ion/ion.rangeSlider',
-			'/backend/css/ion/ion.rangeSlider.skinFlat',
-			'/backend/css/cropper/cropper.min.css',
-			'/backend/css/jstree/jstree.min'
+			'/businesses-backend/css/ion/ion.rangeSlider',
+			'/businesses-backend/css/ion/ion.rangeSlider.skinFlat',
+			'/businesses-backend/css/cropper/cropper.min.css',
+			'/businesses-backend/css/jstree/jstree.min'
 			*/
 		)); ?>
 		<?= $this->fetch('css'); ?>
 		<?= $this->Html->scriptBlock("var webroot = '{$this->webroot}';"); ?>
 		<?= $this->Html->scriptBlock("var fullwebroot = '{$this->Html->url('', true)}';"); ?>
 		<?= $this->Html->script(array(
-			'/backend/js/plugins/jquery/jquery.min',
-			'/backend/js/plugins/jquery/jquery-ui.min',
-			'/backend/js/plugins/bootstrap/bootstrap.min',
-			'/backend/js/plugins/bootstrap/bootstrap-select',
-			'/backend/js/plugins/icheck/icheck.min',
-			'/backend/js/plugins/jquery-validation/jquery.validate',
-			'/backend/js/plugins/maskedinput/jquery.mask.min',
-			'/backend/js/custom',
+			'/businesses-backend/js/plugins/jquery/jquery.min',
+			'/businesses-backend/js/plugins/jquery/jquery-ui.min',
+			'/businesses-backend/js/plugins/bootstrap/bootstrap.min',
+			'/businesses-backend/js/plugins/bootstrap/bootstrap-select',
+			'/businesses-backend/js/plugins/icheck/icheck.min',
+			'/businesses-backend/js/plugins/jquery-validation/jquery.validate',
+			'/businesses-backend/js/plugins/maskedinput/jquery.mask.min',
+			'/businesses-backend/js/plugins/fileinput/fileinput.min',
+			'/businesses-backend/js/custom',
 			/*
-			'/backend/js/plugins/bootstrap/bootstrap-datepicker',
+			'/businesses-backend/js/plugins/bootstrap/bootstrap-datepicker',
 
-			'/backend/js/plugins/icheck/icheck.min',
-			'/backend/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min',
-			'/backend/js/plugins/summernote/summernote',
-			'/backend/js/plugins/codemirror/codemirror',
-			'/backend/js/plugins/codemirror/mode/sql/sql',
+			'/businesses-backend/js/plugins/icheck/icheck.min',
+			'/businesses-backend/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min',
+			'/businesses-backend/js/plugins/summernote/summernote',
+			'/businesses-backend/js/plugins/codemirror/codemirror',
+			'/businesses-backend/js/plugins/codemirror/mode/sql/sql',
 
-			'/backend/js/plugins',
-			'/backend/js/plugins/owl/owl.carousel.min',
-			//'/backend/js/actions',
-			//'/backend/js/demo_sliders',
-			//'/backend/js/demo_charts_morris',
+			'/businesses-backend/js/plugins',
+			'/businesses-backend/js/plugins/owl/owl.carousel.min',
+			//'/businesses-backend/js/actions',
+			//'/businesses-backend/js/demo_sliders',
+			//'/businesses-backend/js/demo_charts_morris',
 
-			'/backend/js/plugins/morris/raphael-min',
-			'/backend/js/plugins/morris/morris.min',
-			'/backend/js/custom',
-			//'/backend/js/demo_dashboard',
-			'/backend/js/plugins/ion/ion.rangeSlider.min',
-			'/backend/js/plugins/rangeslider/jQAllRangeSliders-min',
+			'/businesses-backend/js/plugins/morris/raphael-min',
+			'/businesses-backend/js/plugins/morris/morris.min',
+			'/businesses-backend/js/custom',
+			//'/businesses-backend/js/demo_dashboard',
+			'/businesses-backend/js/plugins/ion/ion.rangeSlider.min',
+			'/businesses-backend/js/plugins/rangeslider/jQAllRangeSliders-min',
 
 			'/js/vendor/bootstrap3-typeahead'
 			*/
@@ -60,8 +61,8 @@
         <div class="login-container">
 			<?= $this->fetch('content'); ?>
 		</div>
-        <audio id="audio-alert" src="<?= $this->Html->url('/backend/audio/alert.mp3'); ?>" preload="auto"></audio>
-        <audio id="audio-fail" src="<?= $this->Html->url('/backend/audio/fail.mp3'); ?>" preload="auto"></audio>
-		<?= $this->Html->script(array('/backend/js/actions')); ?>
+        <audio id="audio-alert" src="<?= $this->Html->url('/businesses-backend/audio/alert.mp3'); ?>" preload="auto"></audio>
+        <audio id="audio-fail" src="<?= $this->Html->url('/businesses-backend/audio/fail.mp3'); ?>" preload="auto"></audio>
+		<?= $this->Html->script(array('/businesses-backend/js/actions')); ?>
     </body>
 </html>

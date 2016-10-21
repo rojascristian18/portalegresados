@@ -164,10 +164,18 @@ class AppController extends Controller
 	public function beforeRender() {
 		// Camino de migas
 		$breadcrumbs	= BreadcrumbComponent::get();
+
+		//Modulos disponibles
+		$modulosDisponibles = $this->getModuleByProfile();
+		
+	
 		if ( ! empty($breadcrumbs) )
 		{
-			$this->set(compact('breadcrumbs'));
+			$this->set(compact('breadcrumbs', 'modulosDisponibles'));
+		}else{
+			$this->set(compact('modulosDisponibles'));
 		}
+
 	}
 
 
@@ -189,5 +197,70 @@ class AppController extends Controller
 
 		// Si no existe una configuración que defina la cantidad de ediciones, el sistema lo define con 2 ediciones
 		return 2;
+	}
+
+
+	/**
+	* Verifica que todos los campos de la empresa esten completos.
+	* @param 	id 		Integer 	Identificador de la Empresa
+	* @return 	bool 	
+	*/
+	public function verificarPerfilCompleto($id = null) {
+		if (ClassRegistry::init('Empresa')->exists($id)) {
+
+			$empresa = ClassRegistry::init('Empresa')->find('first', array('conditions' => array('Empresa.id' => $id, 'Empresa.activo' => 1)));
+			
+			if (! empty($empresa) ) {
+				foreach ($empresa['Empresa'] as $campo) {
+					if ($campo == null || empty($campo) ) {
+						return false;
+					}
+				}
+
+				return true;
+			}
+
+			return false;
+		}
+
+		return false;
+	}
+
+
+	/**
+	* Retorna todos los módulos por usuario.
+	*
+	*/
+	public function getModuleByProfile(){
+
+		$modulos = ClassRegistry::init( 'Modulo' )->find('all', array('conditions' => array('parent_id' => null), 'orderby' => array('orden') ));
+		
+			$data = array();
+			foreach ($modulos as $padre) {
+				$data[] = array(
+					'modulo' => $padre['Modulo']['modulo'],
+					'url'	=> $padre['Modulo']['url'],
+					'icono' => $padre['Modulo']['icono'],
+					'hijos' => ClassRegistry::init( 'Modulo' )->find(
+						'all', array(
+							'conditions' => array('Modulo.parent_id' => $padre['Modulo']['id'] ),
+							'contain' => array('Perfil'),
+							'joins' => array(
+								array(
+									'table' => 'modulos_perfiles',
+						            'alias' => 'md',
+						            'type'  => 'INNER',
+						            'conditions' => array(
+						                'md.modulo_id = Modulo.id',
+						                'md.perfil_id' => $this->Session->read('Auth.Administrador.perfil_id')
+						            )
+								)
+							)
+						)
+					)
+				);
+		}
+		
+		return $data;
 	}
 }

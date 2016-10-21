@@ -251,8 +251,8 @@ jQuery(document).ready(function($)
     }
 
     // Validador del formulario
-    if ( $('#EmpleoJobAddForm').length > 0 ) {
-    	$("#EmpleoJobAddForm").validate({
+    if ( $('#EmpleoBusinessesAddForm').length > 0 ) {
+    	$("#EmpleoBusinessesAddForm").validate({
             rules: {                                            
                 'data[Empleo][titulo]': {
                     required: true,

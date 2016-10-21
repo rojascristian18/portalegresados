@@ -214,7 +214,7 @@ class Empresa extends AppModel
 	 * CALLBACKS
 	 */
 	public function beforeSave($options = array())
-	{
+	{	
 		if ( isset($this->data[$this->alias]['clave']) )
 		{
 			if ( trim($this->data[$this->alias]['clave']) == false )

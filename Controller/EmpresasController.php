@@ -120,7 +120,14 @@ class EmpresasController extends AppController
 			}
 		}
 
+		$rubroEmpresas	= $this->Empresa->RubroEmpresa->find('list');
+		$comunas	= $this->Empresa->Comuna->find('list');
+		$empleados	= $this->Empresa->Empleado->find('list');
+		$preguntas	= $this->Empresa->Pregunta->find('list');
+
 		$this->layout	= 'login';
+
+		$this->set(compact('rubroEmpresas', 'comunas', 'empleados', 'preguntas'));
 		
 	}
 
@@ -131,10 +138,17 @@ class EmpresasController extends AppController
 	}
 
 	public function businesses_index()
-	{
+	{	
 		$this->paginate		= array(
 			'recursive'			=> 0
 		);
+
+		/*
+		* Verifica que los campos de Empresa esten completos
+		*/
+		if ( ! $this->verificarPerfilCompleto( $this->Auth->user('id') ) ) {
+			$this->Session->setFlash(sprintf('Su perfil no se encuentra completo, por favor ingrese <a class="btn-link" href="businesses/empresas/edit/%s">aquí.</a>', $this->Auth->user('id')), null, array(), 'danger');
+		}
 
 		$empresas	= $this->paginate();
 
@@ -200,6 +214,13 @@ class EmpresasController extends AppController
 			));
 		}
 
+		/*
+		* Verifica que los campos de Empresa esten completos
+		*/
+		if ( ! $this->verificarPerfilCompleto( $this->Auth->user('id') ) ) {
+			$this->Session->setFlash(sprintf('Su perfil no se encuentra completo, por favor ingrese <a class="btn-link" href="businesses/empresas/edit/%s">aquí.</a>', $this->Auth->user('id')), null, array(), 'danger');
+		}
+
 		// Camino de migas
 		BreadcrumbComponent::add('Mi empresa ');
 		
@@ -256,11 +277,12 @@ class EmpresasController extends AppController
 			if ( $this->Empresa->save($this->request->data) )
 			{
 				$this->Session->setFlash('Cuenta creada exitosamente.', null, array(), 'success');
-				$this->redirect(array('action' => 'businesses', 'businesses' => true));
+				$this->redirect(array('action' => 'login', 'businesses' => true));
 			}
 			else
 			{
 				$this->Session->setFlash('Error al guardar el registro. Por favor intenta nuevamente.', null, array(), 'danger');
+				$this->redirect(array('action' => 'login', 'businesses' => true));
 			}
 		}
 
@@ -345,6 +367,5 @@ class EmpresasController extends AppController
 
 			$this->set(compact('pregunta', 'empresa'));
 		}
-
 	}
 }

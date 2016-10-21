@@ -167,6 +167,13 @@ class EmpleosController extends AppController
 
 		BreadcrumbComponent::add('Mis ofertas ');
 
+		/*
+		* Verifica que los campos de Empresa esten completos
+		*/
+		if ( ! $this->verificarPerfilCompleto( $this->Auth->user('id') ) ) {
+			$this->Session->setFlash(sprintf('Su perfil no se encuentra completo, por favor ingrese <a class="btn-link" href="businesses/empresas/edit/%s">aquí.</a>', $this->Auth->user('id')), null, array(), 'danger');
+		}
+
 		$empleos	= $this->paginate();
 		$this->set(compact('empleos'));
 	}
@@ -209,6 +216,13 @@ class EmpleosController extends AppController
 		// Camino de migas
 		BreadcrumbComponent::add('Mis ofertas ', array('action' => 'index'));
 		BreadcrumbComponent::add('Crear oferta ');
+
+		/*
+		* Verifica que los campos de Empresa esten completos
+		*/
+		if ( ! $this->verificarPerfilCompleto( $this->Auth->user('id') ) ) {
+			$this->Session->setFlash(sprintf('Su perfil no se encuentra completo, por favor ingrese <a class="btn-link" href="businesses/empresas/edit/%s">aquí.</a>', $this->Auth->user('id')), null, array(), 'danger');
+		}
 		
 		$empresas			= $this->Empleo->Empresa->find('list', array('conditions' => array('Empresa.activo' => 1)));
 		$comunas			= $this->Empleo->Comuna->find('list');
@@ -306,6 +320,13 @@ class EmpleosController extends AppController
 		// Camino de migas
 		BreadcrumbComponent::add('Mis ofertas ', array('action' => 'index'));
 		BreadcrumbComponent::add('Editar oferta ');
+
+		/*
+		* Verifica que los campos de Empresa esten completos
+		*/
+		if ( ! $this->verificarPerfilCompleto( $this->Auth->user('id') ) ) {
+			$this->Session->setFlash(sprintf('Su perfil no se encuentra completo, por favor ingrese <a class="btn-link" href="businesses/empresas/edit/%s">aquí.</a>', $this->Auth->user('id')), null, array(), 'danger');
+		}
 		
 		$empresas			= $this->Empleo->Empresa->find('list', array('conditions' => array('Empresa.activo' => 1)));
 		$comunas			= $this->Empleo->Comuna->find('list');

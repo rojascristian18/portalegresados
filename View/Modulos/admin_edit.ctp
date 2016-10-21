@@ -13,7 +13,7 @@
 					<?= $this->Form->input('id'); ?>
 					<tr>
 						<th><?= $this->Form->label('parent_id', 'Modulo padre'); ?></th>
-						<td><?= $this->Form->input('parent_id', array('class' => 'form-control select')); ?></td>
+						<td><?= $this->Form->select('parent_id', $parentModulos, array('class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('modulo', 'Modulo'); ?></th>
@@ -25,7 +25,7 @@
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('url', 'URL'); ?></th>
-						<td><?= $this->Form->input('url'); ?></td>
+						<td><?= $this->Form->select('url',  $optionsUrl, array('empty' => 'Seleccione', 'class' => 'form-control select')); ?></td>
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('descripcion', 'Descripcion'); ?></th>
@@ -41,7 +41,7 @@
 					</tr>
 					<tr>
 						<th><?= $this->Form->label('Perfil', 'Perfil'); ?></th>
-						<td><?= $this->Form->input('Perfil'); ?></td>
+						<td><?=$this->Form->input('Perfil', array('class' => 'form-control select', 'multiple' => 'multiple'));?></td>
 					</tr>
 				</table>
 

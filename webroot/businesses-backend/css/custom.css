@@ -29,3 +29,8 @@ html, body {
 	line-height: normal;
 	margin-left: 5px;
 }
+
+
+.kv-fileinput-upload {
+	display: none;
+}
